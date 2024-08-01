@@ -29,6 +29,7 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   cupertino_icons: ^1.0.6
+  device_preview: ^1.2.0
   flutter:
     sdk: flutter
   flutter_svg: ^2.0.10+1
@@ -66,6 +67,5 @@ flutter:
         - asset: assets/fonts/Poppins-Bold.ttf
         - asset: assets/fonts/Poppins-Medium.ttf
           weight: 500
-  #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
