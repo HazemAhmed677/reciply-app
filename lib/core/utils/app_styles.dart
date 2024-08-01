@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class AppStyles {
+abstract class AppStyles {
   static TextStyle semiBold14(context) => const TextStyle(
         fontSize: 14,
         fontFamily: 'Poppins',
@@ -47,12 +47,12 @@ class AppStyles {
         fontWeight: FontWeight.w500,
       );
   static TextStyle regular10(context) => const TextStyle(
-        fontSize: 12,
+        fontSize: 10,
         fontFamily: 'Poppins',
         fontWeight: FontWeight.w500,
       );
   static TextStyle regular16(context) => const TextStyle(
-        fontSize: 12,
+        fontSize: 16,
         fontFamily: 'Poppins',
         fontWeight: FontWeight.w500,
       );
