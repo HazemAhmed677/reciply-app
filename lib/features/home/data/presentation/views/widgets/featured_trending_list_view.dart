@@ -7,9 +7,14 @@ class FeaturedTrendingListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 20, right: 20, top: 4),
+      padding: const EdgeInsets.only(
+        left: 20,
+        right: 20,
+        top: 4,
+        bottom: 12,
+      ),
       child: SizedBox(
-        height: 180,
+        height: 230,
         child: ListView.builder(
           physics: const BouncingScrollPhysics(),
           padding: EdgeInsets.zero,
