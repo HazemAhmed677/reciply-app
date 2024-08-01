@@ -10,7 +10,7 @@ class AppRouters {
         pageBuilder: (context, state) => CustomViewAnimation(
           child: const SplashView(),
           key: state.pageKey,
-          duration: 300,
+          duration: 0,
         ),
       ),
     ],
