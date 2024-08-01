@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:reciply/core/utils/app_colors.dart';
 import 'package:reciply/core/utils/app_styles.dart';
+import 'package:reciply/features/splash/presentation/views/widgets/lets_cooking_section.dart';
 
 class LetsCooking extends StatelessWidget {
   const LetsCooking({
@@ -12,31 +13,9 @@ class LetsCooking extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(
-          'Let’s ',
-          style: AppStyles.semiBold56(context).copyWith(
-            color: AppColors.white,
-          ),
-        ),
-        Text(
-          'Cooking',
-          style: AppStyles.semiBold56(context).copyWith(
-            color: AppColors.white,
-          ),
-        ),
+        const LetsCookingSection(),
         const SizedBox(
-          height: 24,
-        ),
-        Text(
-          'Find best recipes for cooking',
-          style: AppStyles.regular16(context).copyWith(
-            color: AppColors.white,
-          ),
-        ),
-        const Flexible(
-          child: SizedBox(
-            height: 40,
-          ),
+          height: 40,
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),

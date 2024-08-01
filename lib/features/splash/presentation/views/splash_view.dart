@@ -16,27 +16,26 @@ class SplashView extends StatelessWidget {
           ),
         ),
       ),
-      child: Scaffold(
+      child: const Scaffold(
         backgroundColor: Colors.transparent,
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const SizedBox(
+            SizedBox(
               height: 52,
             ),
-            const TopOfSplash(),
-            Flexible(
+            TopOfSplash(),
+            Expanded(
               child: SizedBox(
-                height: MediaQuery.sizeOf(context).height * 0.5 - (52 + 18),
+                height: 32,
               ),
             ),
-            const Flexible(
-              child: Padding(
-                padding: EdgeInsets.only(
-                  top: 60.0,
-                ),
-                child: LetsCooking(),
+            Padding(
+              padding: EdgeInsets.only(
+                top: 60.0,
+                bottom: 84,
               ),
+              child: LetsCooking(),
             ),
           ],
         ),
