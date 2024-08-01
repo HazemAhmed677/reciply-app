@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:reciply/features/splash/presentation/views/widgets/image_with_animation.dart';
 import 'package:reciply/features/splash/presentation/views/widgets/splash_view_body.dart';
 
 class SplashView extends StatelessWidget {
@@ -6,19 +7,14 @@ class SplashView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-          fit: BoxFit.cover,
-          image: AssetImage(
-            'assets/images/cover.png',
-          ),
+    return const Stack(
+      children: [
+        ImageWithAnimation(),
+        Scaffold(
+          backgroundColor: Colors.transparent,
+          body: SplashViewBody(),
         ),
-      ),
-      child: const Scaffold(
-        backgroundColor: Colors.transparent,
-        body: SplashViewBody(),
-      ),
+      ],
     );
   }
 }

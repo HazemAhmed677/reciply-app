@@ -72,7 +72,7 @@ class _LetsCookingSectionState extends State<LetsCookingSection>
   void initialzeAnimationTools() {
     animationController1 = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 1200),
+      duration: const Duration(milliseconds: 1400),
     );
     animationController2 = AnimationController(
       vsync: this,
