@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:reciply/utils/app_routers.dart';
 
 void main() {
   runApp(
@@ -11,6 +12,8 @@ class ReciplyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return MaterialApp.router(
+      routerConfig: AppRouters.route,
+    );
   }
 }
