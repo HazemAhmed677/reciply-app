@@ -8,17 +8,18 @@ class TopOfSplash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Icon(
           Icons.star_sharp,
-          size: 16,
+          size: 18,
           color: AppColors.white,
         ),
         const SizedBox(
           width: 8,
         ),
         Text(
-          '60K+',
+          '60K+ ',
           style: AppStyles.semiBold16(context).copyWith(
             color: AppColors.white,
           ),
