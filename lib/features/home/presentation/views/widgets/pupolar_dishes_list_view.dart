@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:reciply/features/home/data/presentation/views/widgets/pupolar_stack.dart';
+import 'package:reciply/features/home/presentation/views/widgets/pupolar_stack.dart';
 
 class PupolarDishesListView extends StatelessWidget {
   const PupolarDishesListView({super.key});

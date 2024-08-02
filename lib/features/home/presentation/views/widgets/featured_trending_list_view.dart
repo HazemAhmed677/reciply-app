@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:reciply/features/home/data/presentation/views/widgets/treanding_card.dart';
+import 'package:reciply/features/home/presentation/views/widgets/treanding_card.dart';
 
 class FeaturedTrendingListView extends StatelessWidget {
   const FeaturedTrendingListView({super.key});

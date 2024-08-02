@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:reciply/features/home/data/presentation/views/widgets/pupular_category_card.dart';
+import 'package:reciply/features/home/presentation/views/widgets/pupular_category_card.dart';
 
 class PopularCategoryListView extends StatefulWidget {
   const PopularCategoryListView({super.key});

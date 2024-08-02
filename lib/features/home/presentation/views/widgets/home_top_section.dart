@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:reciply/core/utils/app_styles.dart';
-import 'package:reciply/features/home/data/presentation/views/widgets/custom_text_field.dart';
+import 'package:reciply/features/home/presentation/views/widgets/custom_text_field.dart';
 
 class HomeTopSection extends StatelessWidget {
   const HomeTopSection({super.key});

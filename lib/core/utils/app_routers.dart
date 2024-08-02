@@ -1,6 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:reciply/core/helpers/custom_view_animation.dart';
-import 'package:reciply/features/home/data/presentation/views/home_view.dart';
+import 'package:reciply/features/home/presentation/views/home_view.dart';
 
 class AppRouters {
   // static const String splashID = '/';
