@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:reciply/features/home/data/presentation/views/widgets/featured_popular_category.dart';
 import 'package:reciply/features/home/data/presentation/views/widgets/featured_trending_list_view.dart';
 import 'package:reciply/features/home/data/presentation/views/widgets/trending_now_word,.dart';
 
@@ -14,7 +13,6 @@ class FeaturedTrendingNow extends StatelessWidget {
         children: [
           TrendingNowWord(),
           FeaturedTrendingListView(),
-          FeaturedPopularCategory(),
         ],
       ),
     );

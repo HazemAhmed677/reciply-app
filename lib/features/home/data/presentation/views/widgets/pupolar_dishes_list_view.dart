@@ -7,9 +7,21 @@ class PupolarDishesListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.only(
+        left: 20,
+        right: 20,
+        top: 76,
+      ),
+      child: SizedBox(
+        height: 180,
         child: ListView.builder(
-            itemCount: 8,
-            itemBuilder: (context, index) => const PupolarDishStack()));
+          physics: const BouncingScrollPhysics(),
+          clipBehavior: Clip.none,
+          scrollDirection: Axis.horizontal,
+          itemCount: 8,
+          itemBuilder: (context, index) => const PupolarDishStack(),
+        ),
+      ),
+    );
   }
 }

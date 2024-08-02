@@ -8,30 +8,25 @@ class PupolarDishStack extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 60),
-      child: Center(
-        child: Stack(
-          clipBehavior: Clip.none,
-          children: [
-            Container(
-              height: 177,
-              width: 168,
-              decoration: BoxDecoration(
-                color: AppColors.f1Color,
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: const PupolarContainerElements(),
-            ),
-            const Positioned(
-              top: -56,
-              left: 0,
-              right: 0,
-              child: PupolarDish(),
-            ),
-          ],
+    return Stack(
+      clipBehavior: Clip.none,
+      children: [
+        Container(
+          height: 177,
+          width: 168,
+          decoration: BoxDecoration(
+            color: AppColors.f1Color,
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: const PupolarContainerElements(),
         ),
-      ),
+        const Positioned(
+          top: -56,
+          left: 0,
+          right: 0,
+          child: PupolarDish(),
+        ),
+      ],
     );
   }
 }
