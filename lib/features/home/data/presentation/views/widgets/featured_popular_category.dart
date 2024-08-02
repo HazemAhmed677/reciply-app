@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:reciply/core/utils/app_styles.dart';
 import 'package:reciply/features/home/data/presentation/views/widgets/popular_category_list_view.dart';
-import 'package:reciply/features/home/data/presentation/views/widgets/pupolar_dish.dart';
-import 'package:reciply/features/home/data/presentation/views/widgets/pupolar_dishes_list_view.dart';
+import 'package:reciply/features/home/data/presentation/views/widgets/pupolar_stack.dart';
 
 class FeaturedPopularCategory extends StatelessWidget {
   const FeaturedPopularCategory({super.key});
@@ -26,7 +25,7 @@ class FeaturedPopularCategory extends StatelessWidget {
           height: 16,
         ),
         const PopularCategoryListView(),
-        const PupolarDish()
+        const PupolarDishStack(),
         // const PupolarDishesListView(),
       ],
     );

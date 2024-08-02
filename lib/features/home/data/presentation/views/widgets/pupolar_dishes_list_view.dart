@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:reciply/features/home/data/presentation/views/widgets/pupolar_dish.dart';
+import 'package:reciply/features/home/data/presentation/views/widgets/pupolar_stack.dart';
 
 class PupolarDishesListView extends StatelessWidget {
   const PupolarDishesListView({super.key});
@@ -10,6 +10,6 @@ class PupolarDishesListView extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         child: ListView.builder(
             itemCount: 8,
-            itemBuilder: (context, index) => const PupolarDish()));
+            itemBuilder: (context, index) => const PupolarDishStack()));
   }
 }
