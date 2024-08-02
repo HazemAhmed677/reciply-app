@@ -12,8 +12,8 @@ class PupolarDishStack extends StatelessWidget {
       clipBehavior: Clip.none,
       children: [
         Container(
-          height: 177,
-          width: 168,
+          height: 188,
+          width: 160,
           decoration: BoxDecoration(
             color: AppColors.f1Color,
             borderRadius: BorderRadius.circular(12),

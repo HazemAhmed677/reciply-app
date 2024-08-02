@@ -13,13 +13,18 @@ class PupolarDishesListView extends StatelessWidget {
         top: 76,
       ),
       child: SizedBox(
-        height: 180,
+        height: 198,
         child: ListView.builder(
           physics: const BouncingScrollPhysics(),
           clipBehavior: Clip.none,
           scrollDirection: Axis.horizontal,
           itemCount: 8,
-          itemBuilder: (context, index) => const PupolarDishStack(),
+          itemBuilder: (context, index) => Padding(
+            padding: EdgeInsets.only(
+              right: (index != 7) ? 16 : 0,
+            ),
+            child: const PupolarDishStack(),
+          ),
         ),
       ),
     );
