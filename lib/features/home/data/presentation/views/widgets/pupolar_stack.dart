@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:reciply/constants.dart';
 import 'package:reciply/core/utils/app_colors.dart';
+import 'package:reciply/features/home/data/presentation/views/widgets/pupolar_container_elements.dart';
 import 'package:reciply/features/home/data/presentation/views/widgets/pupolar_dish.dart';
 
 class PupolarDishStack extends StatelessWidget {
@@ -9,18 +9,19 @@ class PupolarDishStack extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 30),
+      padding: const EdgeInsets.only(top: 60),
       child: Center(
         child: Stack(
           clipBehavior: Clip.none,
           children: [
             Container(
-              height: 176,
+              height: 177,
               width: 168,
               decoration: BoxDecoration(
                 color: AppColors.f1Color,
                 borderRadius: BorderRadius.circular(12),
               ),
+              child: const PupolarContainerElements(),
             ),
             const Positioned(
               top: -56,
