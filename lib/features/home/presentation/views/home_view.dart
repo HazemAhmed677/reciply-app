@@ -21,18 +21,20 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: AnimatedSwitcher(
-          duration: const Duration(
-            milliseconds: 600,
-          ),
-          child: screens[currentIndex],
+      extendBody: true,
+      body: AnimatedSwitcher(
+        duration: const Duration(
+          milliseconds: 600,
         ),
-        bottomNavigationBar: CusotmBottomNavigationBar(
-          currentIndex: currentIndex,
-          onTap: (index) {
-            currentIndex = index;
-            setState(() {});
-          },
-        ));
+        child: screens[currentIndex],
+      ),
+      bottomNavigationBar: CusotmBottomNavigationBar(
+        currentIndex: currentIndex,
+        onTap: (index) {
+          currentIndex = index;
+          setState(() {});
+        },
+      ),
+    );
   }
 }

@@ -11,14 +11,16 @@ class PupolarDishStack extends StatelessWidget {
     return Stack(
       clipBehavior: Clip.none,
       children: [
-        Container(
-          height: 188,
-          width: 160,
-          decoration: BoxDecoration(
-            color: AppColors.f1Color,
-            borderRadius: BorderRadius.circular(12),
+        Card(
+          child: Container(
+            height: 188,
+            width: 160,
+            decoration: BoxDecoration(
+              color: AppColors.f1Color,
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: const PupolarContainerElements(),
           ),
-          child: const PupolarContainerElements(),
         ),
         const Positioned(
           top: -56,

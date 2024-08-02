@@ -13,7 +13,7 @@ class PupolarDishesListView extends StatelessWidget {
         top: 76,
       ),
       child: SizedBox(
-        height: 198,
+        height: 204,
         child: ListView.builder(
           physics: const BouncingScrollPhysics(),
           clipBehavior: Clip.none,

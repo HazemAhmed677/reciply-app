@@ -16,38 +16,40 @@ class _CustomTextFieldState extends State<CustomTextField> {
   String input = '';
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      clipBehavior: Clip.hardEdge,
-      cursorColor: Colors.lightBlueAccent,
-      style: AppStyles.regular14(context),
-      onSubmitted: (value) {},
-      onChanged: (value) {
-        input = value;
-      },
-      decoration: InputDecoration(
-        hintText: 'Search recipes',
-        prefixIcon: IconButton(
-          onPressed: () {},
-          icon: Icon(
-            FontAwesomeIcons.magnifyingGlass,
-            size: 20,
-            color: AppColors.c1Color,
+    return Card(
+      child: TextField(
+        clipBehavior: Clip.hardEdge,
+        cursorColor: Colors.lightBlueAccent,
+        style: AppStyles.regular14(context),
+        onSubmitted: (value) {},
+        onChanged: (value) {
+          input = value;
+        },
+        decoration: InputDecoration(
+          hintText: 'Search recipes',
+          prefixIcon: IconButton(
+            onPressed: () {},
+            icon: Icon(
+              FontAwesomeIcons.magnifyingGlass,
+              size: 20,
+              color: AppColors.c1Color,
+            ),
           ),
-        ),
-        enabledBorder: const OutlineInputBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(14),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: const BorderRadius.all(
+              Radius.circular(14),
+            ),
+            borderSide: BorderSide(
+              color: AppColors.c1Color,
+            ),
           ),
-          borderSide: BorderSide(
-            color: Colors.grey,
-          ),
-        ),
-        focusedBorder: const OutlineInputBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(14),
-          ),
-          borderSide: BorderSide(
-            color: Colors.lightBlueAccent,
+          focusedBorder: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(14),
+            ),
+            borderSide: BorderSide(
+              color: Colors.lightBlueAccent,
+            ),
           ),
         ),
       ),
