@@ -17,7 +17,7 @@ class _HomeViewState extends State<HomeView> {
     SearchView(),
     SavedView(),
   ];
-  int currentIndex = 0;
+  int currentIndex = 2;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
