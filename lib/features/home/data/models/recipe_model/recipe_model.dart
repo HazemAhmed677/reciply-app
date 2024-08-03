@@ -2,12 +2,12 @@ import 'dart:convert';
 
 import 'meal.dart';
 
-class RecipeModel {
+class RecipesModel {
   List<Meal>? meals;
 
-  RecipeModel({this.meals});
+  RecipesModel({this.meals});
 
-  factory RecipeModel.fromMap(Map<String, dynamic> data) => RecipeModel(
+  factory RecipesModel.fromMap(Map<String, dynamic> data) => RecipesModel(
         meals: (data['meals'] as List<dynamic>?)
             ?.map((e) => Meal.fromMap(e as Map<String, dynamic>))
             .toList(),
@@ -19,13 +19,13 @@ class RecipeModel {
 
   /// `dart:convert`
   ///
-  /// Parses the string and returns the resulting Json object as [RecipeModel].
-  factory RecipeModel.fromJson(String data) {
-    return RecipeModel.fromMap(json.decode(data) as Map<String, dynamic>);
+  /// Parses the string and returns the resulting Json object as [RecipesModel].
+  factory RecipesModel.fromJson(String data) {
+    return RecipesModel.fromMap(json.decode(data) as Map<String, dynamic>);
   }
 
   /// `dart:convert`
   ///
-  /// Converts [RecipeModel] to a JSON string.
+  /// Converts [RecipesModel] to a JSON string.
   String toJson() => json.encode(toMap());
 }
