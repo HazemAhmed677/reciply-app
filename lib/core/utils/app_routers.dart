@@ -24,20 +24,20 @@ abstract class AppRouters {
           duration: 300,
         ),
       ),
-      GoRoute(
-        path: searchID,
-        pageBuilder: (context, state) => CustomViewAnimation(
-          child: const SearchView(),
-          key: state.pageKey,
-          duration: 0,
-        ),
-      ),
+      // GoRoute(
+      //   path: searchID,
+      //   pageBuilder: (context, state) => CustomViewAnimation(
+      //     child: const SearchView(),
+      //     key: state.pageKey,
+      //     duration: 0,
+      //   ),
+      // ),
       GoRoute(
         path: recipeInfoID,
         pageBuilder: (context, state) => CustomViewAnimation(
           child: const RecipeInfoView(),
           key: state.pageKey,
-          duration: 600,
+          duration: 300,
         ),
       ),
     ],

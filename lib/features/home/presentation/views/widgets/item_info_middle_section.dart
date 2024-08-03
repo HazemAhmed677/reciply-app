@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:reciply/core/utils/app_colors.dart';
 import 'package:reciply/core/utils/app_styles.dart';
 import 'package:reciply/features/home/presentation/views/widgets/pupular_category_card.dart';
 
-class ItemInfoListSection extends StatefulWidget {
-  const ItemInfoListSection({super.key});
+class ItemInfoMiddleSection extends StatefulWidget {
+  const ItemInfoMiddleSection({super.key});
 
   @override
-  State<ItemInfoListSection> createState() => _ItemInfoListSectionState();
+  State<ItemInfoMiddleSection> createState() => _ItemInfoMiddleSectionState();
 }
 
-class _ItemInfoListSectionState extends State<ItemInfoListSection> {
+class _ItemInfoMiddleSectionState extends State<ItemInfoMiddleSection> {
   int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -72,7 +73,26 @@ class _ItemInfoListSectionState extends State<ItemInfoListSection> {
               ),
             )
           ],
-        )
+        ),
+        const SizedBox(
+          height: 22,
+        ),
+        Row(
+          children: [
+            SvgPicture.asset(
+              'assets/images/serve.svg',
+            ),
+            const SizedBox(
+              width: 5,
+            ),
+            Text(
+              '1 serve',
+              style: AppStyles.regular12(context).copyWith(
+                color: AppColors.a9Color,
+              ),
+            )
+          ],
+        ),
       ],
     );
   }

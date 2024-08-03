@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:reciply/constants.dart';
 import 'package:reciply/core/utils/app_colors.dart';
@@ -76,6 +77,10 @@ class _SavedItemState extends State<SavedItem> {
                         )
                       : const Text(''),
                   const Spacer(),
+                  SvgPicture.asset('assets/images/timer.svg'),
+                  const SizedBox(
+                    width: 5,
+                  ),
                   Text(
                     '20 min',
                     style: AppStyles.semiBold12(context).copyWith(
