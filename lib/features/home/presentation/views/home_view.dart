@@ -11,7 +11,7 @@ class HomeView extends StatefulWidget {
   State<HomeView> createState() => _HomeViewState();
 }
 
-int currentIndex = 1;
+int currentIndex = 0;
 
 class _HomeViewState extends State<HomeView> {
   List<Widget> screens = const [

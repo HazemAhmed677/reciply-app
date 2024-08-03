@@ -21,25 +21,29 @@ class _CusotmBottomNavigationBarState extends State<CusotmBottomNavigationBar> {
   @override
   Widget build(BuildContext context) {
     return CurvedNavigationBar(
-      color: Color.fromARGB(255, 185, 83, 83),
-      height: 64,
+      color: const Color.fromARGB(255, 213, 100, 100),
+      height: 66,
       key: bottomNavigationKey,
       index: widget.currentIndex,
       items: [
-        SvgPicture.asset(
-          'assets/images/home.svg',
-          colorFilter: ColorFilter.mode(
-            (widget.currentIndex == 0) ? AppColors.e2Color : Colors.white,
-            BlendMode.srcIn,
+        SizedBox(
+          child: SvgPicture.asset(
+            'assets/images/home.svg',
+            height: 28,
+            colorFilter: ColorFilter.mode(
+              (widget.currentIndex == 0) ? AppColors.e2Color : Colors.white,
+              BlendMode.srcIn,
+            ),
           ),
         ),
         Icon(
           FontAwesomeIcons.magnifyingGlass,
           color: (widget.currentIndex == 1) ? AppColors.e2Color : Colors.white,
-          size: 22,
+          size: 28,
         ),
         SvgPicture.asset(
           'assets/images/saved.svg',
+          height: 28,
           colorFilter: ColorFilter.mode(
             (widget.currentIndex == 2) ? AppColors.e2Color : Colors.white,
             BlendMode.srcIn,

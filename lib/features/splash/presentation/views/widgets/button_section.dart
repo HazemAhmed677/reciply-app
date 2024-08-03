@@ -33,7 +33,9 @@ class _ButtonSectionState extends State<ButtonSection>
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+      padding: const EdgeInsets.symmetric(
+        horizontal: 20.0,
+      ),
       child: AnimatedBuilder(
         animation: fadeAnimation,
         builder: (BuildContext context, Widget? child) => FadeTransition(
@@ -50,7 +52,7 @@ class _ButtonSectionState extends State<ButtonSection>
               backgroundColor: const Color(0xffE23E3E),
             ),
             onPressed: () {
-              GoRouter.of(context).push(AppRouters.homeID);
+              GoRouter.of(context).go(AppRouters.homeID);
             },
             child: Padding(
               padding: const EdgeInsets.only(

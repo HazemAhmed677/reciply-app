@@ -19,7 +19,7 @@ class _PopularCategoryListViewState extends State<PopularCategoryListView> {
         scrollDirection: Axis.horizontal,
         child: Row(
           children: List.generate(
-            7,
+            4,
             (index) => GestureDetector(
               onTap: () {
                 currentIndex = index;
