@@ -9,7 +9,9 @@ class RecipeInfoNody extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20.0),
+        padding: EdgeInsets.symmetric(
+          horizontal: 20.0,
+        ),
         child: CustomScrollView(
           slivers: [
             SliverToBoxAdapter(child: TitleOfInfoView()),
