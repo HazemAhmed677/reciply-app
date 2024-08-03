@@ -9,10 +9,13 @@ class SavedItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-        aspectRatio: 315 / 150,
-        child: Padding(
-          padding: const EdgeInsets.only(bottom: 20.0),
-          child: Container(
+      aspectRatio: 315 / 172,
+      child: Padding(
+        padding: const EdgeInsets.only(
+          bottom: 20.0,
+        ),
+        child: Stack(children: [
+          Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(24),
               image: const DecorationImage(
@@ -23,6 +26,25 @@ class SavedItem extends StatelessWidget {
               ),
             ),
           ),
-        ));
+          Container(
+            clipBehavior: Clip.none,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(
+                24,
+              ),
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Colors.transparent,
+                  Colors.grey.shade400.withOpacity(0.5),
+                  Colors.black.withOpacity(0.8)
+                ],
+              ),
+            ),
+          ),
+        ]),
+      ),
+    );
   }
 }

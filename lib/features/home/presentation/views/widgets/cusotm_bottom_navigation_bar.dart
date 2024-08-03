@@ -21,14 +21,13 @@ class _CusotmBottomNavigationBarState extends State<CusotmBottomNavigationBar> {
   @override
   Widget build(BuildContext context) {
     return CurvedNavigationBar(
-      color: AppColors.e2Color.withOpacity(0.9),
+      color: AppColors.e2Color,
       height: 68,
       key: bottomNavigationKey,
       index: widget.currentIndex,
       items: [
         SvgPicture.asset(
           'assets/images/home.svg',
-          clipBehavior: Clip.none,
           colorFilter: ColorFilter.mode(
             (widget.currentIndex == 0) ? AppColors.e2Color : AppColors.white,
             BlendMode.srcIn,
@@ -42,7 +41,6 @@ class _CusotmBottomNavigationBarState extends State<CusotmBottomNavigationBar> {
         ),
         SvgPicture.asset(
           'assets/images/saved.svg',
-          clipBehavior: Clip.none,
           colorFilter: ColorFilter.mode(
             (widget.currentIndex == 2) ? AppColors.e2Color : AppColors.white,
             BlendMode.srcIn,
