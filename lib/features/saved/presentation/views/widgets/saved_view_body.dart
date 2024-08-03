@@ -40,7 +40,7 @@ class SavedViewBody extends StatelessWidget {
         ),
         const SliverToBoxAdapter(
           child: SizedBox(
-            height: 66,
+            height: 56,
           ),
         ),
       ],

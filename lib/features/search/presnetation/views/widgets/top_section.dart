@@ -24,12 +24,7 @@ class TopSection extends StatelessWidget {
           const SizedBox(
             height: 8,
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: 20,
-            ),
-            child: CustomTextField(),
-          )
+          const CustomTextField()
         ],
       ),
     );

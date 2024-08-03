@@ -10,14 +10,14 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return const SafeArea(
       child: CustomScrollView(
         clipBehavior: Clip.none,
-        physics: const BouncingScrollPhysics(),
+        physics: BouncingScrollPhysics(),
         slivers: [
           HomeTopSection(),
-          const FeaturedTrendingNow(),
-          const FeaturedPopularCategory()
+          FeaturedTrendingNow(),
+          FeaturedPopularCategory()
         ],
       ),
     );
