@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:reciply/features/home/data/models/recipe_model/recipe_model.dart';
 
 import 'package:reciply/features/home/presentation/views/widgets/treanding_card.dart';
 
 class FeaturedTrendingListView extends StatelessWidget {
-  const FeaturedTrendingListView({super.key});
-
+  const FeaturedTrendingListView({super.key, required this.recipesModel});
+  final RecipesModel recipesModel;
   @override
   Widget build(BuildContext context) {
     return Padding(
