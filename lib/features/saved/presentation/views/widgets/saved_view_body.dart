@@ -34,7 +34,9 @@ class SavedViewBody extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 20),
           sliver: SliverList(
             delegate: SliverChildBuilderDelegate(
-                (context, index) => const SavedItem(),
+                (context, index) => const SavedItem(
+                      aspectRatio: 315 / 178,
+                    ),
                 childCount: 8),
           ),
         ),

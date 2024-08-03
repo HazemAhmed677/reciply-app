@@ -7,8 +7,11 @@ import 'package:reciply/core/utils/app_styles.dart';
 class SavedItem extends StatefulWidget {
   const SavedItem({
     super.key,
+    this.flag,
+    required this.aspectRatio,
   });
-
+  final bool? flag;
+  final double aspectRatio;
   @override
   State<SavedItem> createState() => _SavedItemState();
 }
@@ -18,10 +21,10 @@ class _SavedItemState extends State<SavedItem> {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 315 / 178,
+      aspectRatio: widget.aspectRatio,
       child: Padding(
-        padding: const EdgeInsets.only(
-          bottom: 16.0,
+        padding: EdgeInsets.only(
+          bottom: (widget.flag == null) ? 16.0 : 0,
         ),
         child: Stack(
           alignment: Alignment.bottomCenter,
@@ -64,12 +67,14 @@ class _SavedItemState extends State<SavedItem> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    'Traditional spare ribs baked',
-                    style: AppStyles.semiBold14(context).copyWith(
-                      color: AppColors.white,
-                    ),
-                  ),
+                  (widget.flag == null)
+                      ? Text(
+                          'Traditional spare ribs baked',
+                          style: AppStyles.semiBold14(context).copyWith(
+                            color: AppColors.white,
+                          ),
+                        )
+                      : const Text(''),
                   const Spacer(),
                   Text(
                     '20 min',

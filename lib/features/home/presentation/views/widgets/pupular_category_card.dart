@@ -6,8 +6,10 @@ class PupularCategoryCard extends StatelessWidget {
   const PupularCategoryCard({
     super.key,
     required this.isActive,
+    required this.text,
   });
   final bool isActive;
+  final String text;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -25,12 +27,11 @@ class PupularCategoryCard extends StatelessWidget {
             horizontal: 14,
             vertical: 8,
           ),
-          child: Text(
-            'Noodle',
-            style: AppStyles.semiBold14(context).copyWith(
-              color: (isActive) ? AppColors.white : AppColors.eeColor,
-            ),
-          ),
+          child: Text(text,
+              textAlign: TextAlign.center,
+              style: AppStyles.semiBold14(context).copyWith(
+                color: (isActive) ? AppColors.white : AppColors.eeColor,
+              )),
         ),
       ),
     );

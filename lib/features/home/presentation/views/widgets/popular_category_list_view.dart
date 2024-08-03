@@ -27,6 +27,7 @@ class _PopularCategoryListViewState extends State<PopularCategoryListView> {
               },
               child: PupularCategoryCard(
                 isActive: (currentIndex == index),
+                text: 'Noodle',
               ),
             ),
           ),
