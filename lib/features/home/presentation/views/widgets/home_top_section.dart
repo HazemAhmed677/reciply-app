@@ -2,9 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:reciply/core/utils/app_styles.dart';
 import 'package:reciply/features/home/presentation/views/widgets/custom_text_field.dart';
 
-class HomeTopSection extends StatelessWidget {
-  const HomeTopSection({super.key});
+class HomeTopSection extends StatefulWidget {
+  const HomeTopSection({
+    super.key,
+  });
 
+  @override
+  State<HomeTopSection> createState() => _HomeTopSectionState();
+}
+
+class _HomeTopSectionState extends State<HomeTopSection> {
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
@@ -24,12 +31,14 @@ class HomeTopSection extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(
+          Padding(
+            padding: const EdgeInsets.symmetric(
               horizontal: 20,
               vertical: 8,
             ),
-            child: CustomTextField(),
+            child: CustomTextField(
+              onTap: () {},
+            ),
           ),
         ],
       ),

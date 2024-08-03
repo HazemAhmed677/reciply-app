@@ -11,13 +11,15 @@ class HomeView extends StatefulWidget {
   State<HomeView> createState() => _HomeViewState();
 }
 
+int currentIndex = 1;
+
 class _HomeViewState extends State<HomeView> {
   List<Widget> screens = const [
     HomeViewBody(),
     SearchView(),
     SavedView(),
   ];
-  int currentIndex = 2;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

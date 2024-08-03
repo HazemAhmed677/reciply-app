@@ -4,18 +4,20 @@ import 'package:reciply/features/home/presentation/views/widgets/featured_trendi
 import 'package:reciply/features/home/presentation/views/widgets/home_top_section.dart';
 
 class HomeViewBody extends StatelessWidget {
-  const HomeViewBody({super.key});
+  const HomeViewBody({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
+    return SafeArea(
       child: CustomScrollView(
         clipBehavior: Clip.none,
-        physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+        physics: const BouncingScrollPhysics(),
         slivers: [
           HomeTopSection(),
-          FeaturedTrendingNow(),
-          FeaturedPopularCategory()
+          const FeaturedTrendingNow(),
+          const FeaturedPopularCategory()
         ],
       ),
     );
