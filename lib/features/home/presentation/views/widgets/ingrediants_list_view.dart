@@ -6,14 +6,11 @@ class IngrediantsListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.builder(
-        padding: EdgeInsets.zero,
-        itemCount: 8,
-        itemBuilder: (context, index) => const Padding(
-          padding: EdgeInsets.only(bottom: 12.0),
-          child: IngrediantItem(),
-        ),
+    return SliverList.builder(
+      itemCount: 8,
+      itemBuilder: (context, index) => const Padding(
+        padding: EdgeInsets.only(bottom: 12.0),
+        child: IngrediantItem(),
       ),
     );
   }

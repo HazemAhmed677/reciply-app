@@ -10,14 +10,16 @@ class RecipeInfoNody extends StatelessWidget {
     return const Scaffold(
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            TitleOfInfoView(),
-            ItemInfoMiddleSection(),
+        child: CustomScrollView(
+          slivers: [
+            SliverToBoxAdapter(child: TitleOfInfoView()),
+            SliverToBoxAdapter(child: ItemInfoMiddleSection()),
+            // SliverToBoxAdapter(child: MealProcedure()),
             IngrediantsListView(),
-            SizedBox(
-              height: 16,
+            SliverToBoxAdapter(
+              child: SizedBox(
+                height: 16,
+              ),
             ),
           ],
         ),
