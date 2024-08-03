@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -6,10 +7,11 @@ import 'package:reciply/constants.dart';
 import 'package:reciply/core/utils/app_colors.dart';
 import 'package:reciply/core/utils/app_routers.dart';
 import 'package:reciply/core/utils/app_styles.dart';
+import 'package:reciply/features/home/data/models/recipe_model/meal.dart';
 
 class TreandingCard extends StatefulWidget {
-  const TreandingCard({super.key});
-
+  const TreandingCard({super.key, required this.mealModel});
+  final MealModel mealModel;
   @override
   State<TreandingCard> createState() => _TreandingCardState();
 }
@@ -72,9 +74,12 @@ class _TreandingCardState extends State<TreandingCard> {
                                 8,
                               ),
                             ),
-                            child: Image.asset(
-                              testImage,
+                            child: CachedNetworkImage(
                               fit: BoxFit.cover,
+                              imageUrl: widget.mealModel.strMealThumb!,
+                              errorWidget: (context, url, error) {
+                                return Image.asset(testImage);
+                              },
                             ),
                           ),
                         ),

@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-class Meal {
+class MealModel {
   String? idMeal;
   String? strMeal;
   dynamic strDrinkAlternate;
@@ -55,7 +55,7 @@ class Meal {
   dynamic strCreativeCommonsConfirmed;
   dynamic dateModified;
 
-  Meal({
+  MealModel({
     this.idMeal,
     this.strMeal,
     this.strDrinkAlternate,
@@ -111,7 +111,7 @@ class Meal {
     this.dateModified,
   });
 
-  factory Meal.fromMap(Map<String, dynamic> data) => Meal(
+  factory MealModel.fromMap(Map<String, dynamic> data) => MealModel(
         idMeal: data['idMeal'] as String?,
         strMeal: data['strMeal'] as String?,
         strDrinkAlternate: data['strDrinkAlternate'] as dynamic,
@@ -226,13 +226,13 @@ class Meal {
 
   /// `dart:convert`
   ///
-  /// Parses the string and returns the resulting Json object as [Meal].
-  factory Meal.fromJson(String data) {
-    return Meal.fromMap(json.decode(data) as Map<String, dynamic>);
+  /// Parses the string and returns the resulting Json object as [MealModel].
+  factory MealModel.fromJson(String data) {
+    return MealModel.fromMap(json.decode(data) as Map<String, dynamic>);
   }
 
   /// `dart:convert`
   ///
-  /// Converts [Meal] to a JSON string.
+  /// Converts [MealModel] to a JSON string.
   String toJson() => json.encode(toMap());
 }

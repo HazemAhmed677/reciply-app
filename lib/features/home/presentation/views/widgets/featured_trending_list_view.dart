@@ -22,12 +22,14 @@ class FeaturedTrendingListView extends StatelessWidget {
           physics: const BouncingScrollPhysics(),
           padding: EdgeInsets.zero,
           scrollDirection: Axis.horizontal,
-          itemCount: 5,
+          itemCount: recipesModel.meals?.length ?? 0,
           itemBuilder: (BuildContext context, int index) => Padding(
             padding: EdgeInsets.only(
-              right: (index != 4) ? 14.0 : 0,
+              right: (index != recipesModel.meals!.length - 1) ? 14.0 : 0,
             ),
-            child: const TreandingCard(),
+            child: TreandingCard(
+              mealModel: recipesModel.meals![index],
+            ),
           ),
         ),
       ),

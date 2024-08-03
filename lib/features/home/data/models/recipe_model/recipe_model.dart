@@ -3,13 +3,13 @@ import 'dart:convert';
 import 'meal.dart';
 
 class RecipesModel {
-  List<Meal>? meals;
+  List<MealModel>? meals;
 
   RecipesModel({this.meals});
 
   factory RecipesModel.fromMap(Map<String, dynamic> data) => RecipesModel(
         meals: (data['meals'] as List<dynamic>?)
-            ?.map((e) => Meal.fromMap(e as Map<String, dynamic>))
+            ?.map((e) => MealModel.fromMap(e as Map<String, dynamic>))
             .toList(),
       );
 
