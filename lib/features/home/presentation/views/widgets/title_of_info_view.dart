@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:reciply/core/utils/app_styles.dart';
+import 'package:reciply/features/saved/presentation/views/widgets/saved_item.dart';
 
 class TitleOfInfoView extends StatelessWidget {
   const TitleOfInfoView({super.key});
@@ -39,6 +40,16 @@ class TitleOfInfoView extends StatelessWidget {
         ),
         const SizedBox(
           height: 12,
+        ),
+        const SizedBox(
+          height: 12,
+        ),
+        const SavedItem(
+          flag: true,
+          aspectRatio: 335 / 218,
+        ),
+        const SizedBox(
+          height: 16,
         ),
       ],
     );
