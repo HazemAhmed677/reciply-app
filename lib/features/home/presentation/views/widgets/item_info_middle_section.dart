@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:reciply/core/utils/app_colors.dart';
 import 'package:reciply/core/utils/app_styles.dart';
+import 'package:reciply/features/home/presentation/manager/ingrediants_and_procedure_cubit/ingrediants_and_procedure_cubit.dart';
 import 'package:reciply/features/home/presentation/views/widgets/pupular_category_card.dart';
 
 class ItemInfoMiddleSection extends StatefulWidget {
@@ -51,6 +53,8 @@ class _ItemInfoMiddleSectionState extends State<ItemInfoMiddleSection> {
             Expanded(
               child: GestureDetector(
                 onTap: () {
+                  BlocProvider.of<IngrediantsAndProcedureCubit>(context)
+                      .getClicking(0);
                   currentIndex = 0;
                   setState(() {});
                 },
@@ -63,6 +67,8 @@ class _ItemInfoMiddleSectionState extends State<ItemInfoMiddleSection> {
             Expanded(
               child: GestureDetector(
                 onTap: () {
+                  BlocProvider.of<IngrediantsAndProcedureCubit>(context)
+                      .getClicking(1);
                   currentIndex = 1;
                   setState(() {});
                 },
