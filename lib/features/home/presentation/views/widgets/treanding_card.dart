@@ -73,13 +73,13 @@ class _TreandingCardState extends State<TreandingCard> {
                 Positioned(
                   top: 8,
                   right: 12,
-                  child: CircleAvatar(
-                    backgroundColor: AppColors.white,
-                    child: InkWell(
-                      onTap: () {
-                        flag = !flag;
-                        setState(() {});
-                      },
+                  child: InkWell(
+                    onTap: () {
+                      flag = !flag;
+                      setState(() {});
+                    },
+                    child: CircleAvatar(
+                      backgroundColor: AppColors.white,
                       child: Icon(
                         (!flag)
                             ? FontAwesomeIcons.bookmark

@@ -61,14 +61,14 @@ class _PupolarContainerElementsState extends State<PupolarContainerElements> {
                 ),
               ),
               const Spacer(),
-              CircleAvatar(
-                radius: 14,
-                backgroundColor: AppColors.white,
-                child: InkWell(
-                  onTap: () {
-                    flag = !flag;
-                    setState(() {});
-                  },
+              InkWell(
+                onTap: () {
+                  flag = !flag;
+                  setState(() {});
+                },
+                child: CircleAvatar(
+                  radius: 14,
+                  backgroundColor: AppColors.white,
                   child: Icon(
                     (!flag)
                         ? FontAwesomeIcons.bookmark

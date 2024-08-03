@@ -48,7 +48,7 @@ class _CusotmBottomNavigationBarState extends State<CusotmBottomNavigationBar> {
         ),
       ],
       buttonBackgroundColor: Colors.transparent,
-      backgroundColor: Colors.transparent,
+      backgroundColor: Colors.white70,
       animationCurve: Curves.easeInOut,
       animationDuration: const Duration(
         milliseconds: 500,
