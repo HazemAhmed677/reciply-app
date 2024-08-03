@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:reciply/features/home/data/models/recipe_model/meal.dart';
 import 'package:reciply/features/home/presentation/views/widgets/recipe_info_body.dart';
 
 class RecipeInfoView extends StatelessWidget {
-  const RecipeInfoView({super.key});
-
+  const RecipeInfoView({super.key, required this.mealModel});
+  final MealModel mealModel;
   @override
   Widget build(BuildContext context) {
-    return const RecipeInfoNody();
+    return RecipeInfoBody(
+      mealModel: mealModel,
+    );
   }
 }

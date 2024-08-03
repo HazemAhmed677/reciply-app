@@ -1,31 +1,35 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:reciply/constants.dart';
 import 'package:reciply/core/utils/app_colors.dart';
 import 'package:reciply/core/utils/app_styles.dart';
+import 'package:reciply/features/home/data/models/recipe_model/meal.dart';
 
 class SavedItem extends StatefulWidget {
   const SavedItem({
     super.key,
-    this.flag,
+    this.flag = false,
     required this.aspectRatio,
+    this.mealModel,
   });
-  final bool? flag;
+  final MealModel? mealModel;
+  final bool flag;
   final double aspectRatio;
   @override
   State<SavedItem> createState() => _SavedItemState();
 }
 
 class _SavedItemState extends State<SavedItem> {
-  bool flag = true;
+  bool shift = true;
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
       aspectRatio: widget.aspectRatio,
       child: Padding(
         padding: EdgeInsets.only(
-          bottom: (widget.flag == null) ? 16.0 : 0,
+          bottom: (!widget.flag) ? 16.0 : 0,
         ),
         child: Stack(
           alignment: Alignment.bottomCenter,
@@ -33,11 +37,18 @@ class _SavedItemState extends State<SavedItem> {
             Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16),
-                image: const DecorationImage(
+                image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: AssetImage(
-                    testImage,
-                  ),
+                  image: (widget.flag)
+                      ? (widget.mealModel!.strMealThumb != null)
+                          ? CachedNetworkImageProvider(
+                              widget.mealModel!.strMealThumb!)
+                          : const AssetImage(
+                              testImage,
+                            )
+                      : const AssetImage(
+                          testImage,
+                        ),
                 ),
               ),
             ),
@@ -53,7 +64,7 @@ class _SavedItemState extends State<SavedItem> {
                   end: Alignment.bottomCenter,
                   colors: [
                     Colors.transparent,
-                    Colors.grey.shade400.withOpacity(0.5),
+                    Colors.grey.shade600.withOpacity(0.3),
                     Colors.black.withOpacity(0.8)
                   ],
                 ),
@@ -68,7 +79,7 @@ class _SavedItemState extends State<SavedItem> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  (widget.flag == null)
+                  (!widget.flag)
                       ? Text(
                           'Traditional spare ribs baked',
                           style: AppStyles.semiBold14(context).copyWith(
@@ -92,14 +103,14 @@ class _SavedItemState extends State<SavedItem> {
                   ),
                   InkWell(
                     onTap: () {
-                      flag = !flag;
+                      shift = !shift;
                       setState(() {});
                     },
                     child: CircleAvatar(
                       radius: 14,
                       backgroundColor: AppColors.white,
                       child: Icon(
-                        (!flag)
+                        (!shift)
                             ? FontAwesomeIcons.bookmark
                             : FontAwesomeIcons.solidBookmark,
                         color: Colors.black,

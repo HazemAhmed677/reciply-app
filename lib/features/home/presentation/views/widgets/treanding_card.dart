@@ -65,7 +65,8 @@ class _TreandingCardState extends State<TreandingCard> {
                             8,
                           ),
                           onTap: () {
-                            GoRouter.of(context).push(AppRouters.recipeInfoID);
+                            GoRouter.of(context).push(AppRouters.recipeInfoID,
+                                extra: widget.mealModel);
                           },
                           child: Container(
                             clipBehavior: Clip.hardEdge,
@@ -132,11 +133,18 @@ class _TreandingCardState extends State<TreandingCard> {
         ),
         Padding(
           padding: const EdgeInsets.only(
-            left: 4.0,
+            left: 8.0,
           ),
-          child: Text(
-            'How to make sushi at home',
-            style: AppStyles.semiBold16(context),
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(
+              maxWidth: 250,
+            ),
+            child: Text(
+              widget.mealModel.strMeal!,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: AppStyles.regular14(context),
+            ),
           ),
         ),
       ],
