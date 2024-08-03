@@ -97,6 +97,11 @@ class _TreandingCardState extends State<TreandingCard> {
                             ? FontAwesomeIcons.bookmark
                             : FontAwesomeIcons.solidBookmark,
                         color: Colors.black,
+                        shadows: const [
+                          Shadow(
+                            blurRadius: 10,
+                          ),
+                        ],
                         size: 20,
                       ),
                     ),

@@ -93,6 +93,9 @@ class _ItemInfoMiddleSectionState extends State<ItemInfoMiddleSection> {
             )
           ],
         ),
+        const SizedBox(
+          height: 16,
+        ),
       ],
     );
   }
