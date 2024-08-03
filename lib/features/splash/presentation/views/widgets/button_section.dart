@@ -23,10 +23,14 @@ class _ButtonSectionState extends State<ButtonSection>
     super.initState();
     animationController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 400),
+      duration: const Duration(
+        milliseconds: 400,
+      ),
     );
-    fadeAnimation =
-        Tween<double>(begin: 0, end: 1).animate(animationController);
+    fadeAnimation = Tween<double>(
+      begin: 0,
+      end: 1,
+    ).animate(animationController);
     animationController.forward();
   }
 

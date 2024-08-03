@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:reciply/features/home/presentation/views/widgets/treanding_card.dart';
 
 class FeaturedTrendingListView extends StatelessWidget {
@@ -22,7 +23,9 @@ class FeaturedTrendingListView extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           itemCount: 5,
           itemBuilder: (BuildContext context, int index) => Padding(
-            padding: EdgeInsets.only(right: (index != 4) ? 14.0 : 0),
+            padding: EdgeInsets.only(
+              right: (index != 4) ? 14.0 : 0,
+            ),
             child: const TreandingCard(),
           ),
         ),

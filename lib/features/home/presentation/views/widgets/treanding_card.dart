@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 import 'package:reciply/constants.dart';
 import 'package:reciply/core/utils/app_colors.dart';
+import 'package:reciply/core/utils/app_routers.dart';
 import 'package:reciply/core/utils/app_styles.dart';
 
 class TreandingCard extends StatefulWidget {
@@ -20,7 +22,9 @@ class _TreandingCardState extends State<TreandingCard> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.only(bottom: 12.0),
+          padding: const EdgeInsets.only(
+            bottom: 12.0,
+          ),
           child: SizedBox(
             height: 190,
             child: Stack(
@@ -29,7 +33,7 @@ class _TreandingCardState extends State<TreandingCard> {
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(
-                      38,
+                      58,
                     ),
                     boxShadow: [
                       BoxShadow(
@@ -46,7 +50,7 @@ class _TreandingCardState extends State<TreandingCard> {
                     elevation: 4,
                     shadowColor: Colors.grey.shade200,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(52),
+                      borderRadius: BorderRadius.circular(8),
                     ),
                     child: AspectRatio(
                       aspectRatio: 280 / 180,
@@ -54,16 +58,24 @@ class _TreandingCardState extends State<TreandingCard> {
                         padding: const EdgeInsets.only(
                           bottom: 0.20,
                         ),
-                        child: Container(
-                          clipBehavior: Clip.hardEdge,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(
-                              8,
-                            ),
+                        child: InkWell(
+                          borderRadius: BorderRadius.circular(
+                            8,
                           ),
-                          child: Image.asset(
-                            testImage,
-                            fit: BoxFit.cover,
+                          onTap: () {
+                            GoRouter.of(context).push(AppRouters.recipeInfoID);
+                          },
+                          child: Container(
+                            clipBehavior: Clip.hardEdge,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(
+                                8,
+                              ),
+                            ),
+                            child: Image.asset(
+                              testImage,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ),
