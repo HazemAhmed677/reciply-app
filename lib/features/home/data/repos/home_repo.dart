@@ -5,7 +5,7 @@ import 'package:reciply/features/home/data/models/categorized_meals_model/catego
 import 'package:reciply/features/home/data/models/recipe_model/recipe_model.dart';
 
 abstract class HomeRepo {
-  Future<Either<FaluireService, RecipesModel>> fetchTrendingMeals(
+  Future<Either<FaluireService, RecipesModel>> fetchRecipes(
       {required String url});
   Future<Either<FaluireService, CategoriesModel>> fetchPupolarCategories(
       {required String url});

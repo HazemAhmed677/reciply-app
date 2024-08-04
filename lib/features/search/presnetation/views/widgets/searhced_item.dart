@@ -1,11 +1,13 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:reciply/constants.dart';
 import 'package:reciply/core/utils/app_colors.dart';
 import 'package:reciply/core/utils/app_styles.dart';
+import 'package:reciply/features/home/data/models/recipe_model/meal.dart';
 
 class SearhcedItem extends StatelessWidget {
-  const SearhcedItem({super.key});
-
+  const SearhcedItem({super.key, required this.mealModel});
+  final MealModel mealModel;
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
@@ -16,11 +18,11 @@ class SearhcedItem extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16),
-              image: const DecorationImage(
+              image: DecorationImage(
                 fit: BoxFit.cover,
-                image: AssetImage(
-                  testImage,
-                ),
+                image: (mealModel.strMealThumb != null)
+                    ? CachedNetworkImageProvider(mealModel.strMealThumb!)
+                    : const AssetImage(testImage),
               ),
             ),
           ),
@@ -51,7 +53,7 @@ class SearhcedItem extends StatelessWidget {
               bottom: 14,
             ),
             child: Text(
-              'Traditional spare ribs baked',
+              mealModel.strMeal ?? "",
               style: AppStyles.semiBold12(context).copyWith(
                 color: AppColors.white,
               ),

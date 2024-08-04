@@ -12,7 +12,7 @@ class FetchSearchedMealsCubit extends Cubit<FetchSearchedMealsState> {
   Future<void> fetchTrendingRecipes({required String input}) async {
     emit(FetchSearchedMealsLoading());
     String url = 'https://www.themealdb.com/api/json/v1/1/search.php?f=$input';
-    var response = await homeRepoImplement.fetchTrendingMeals(
+    var response = await homeRepoImplement.fetchRecipes(
       url: url,
     );
     response.fold((failure) {

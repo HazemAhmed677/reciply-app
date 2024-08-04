@@ -10,9 +10,9 @@ class FetchRecentSerchMealsCubit extends Cubit<FetchRecentSerchMealsState> {
       : super(FetchRecentSerchMealsInitial());
   final HomeRepoImplement homeRepoImplement;
 
-  Future<void> fetchTrendingRecipes() async {
+  Future<void> fetchRecentSearchMeals() async {
     emit(FetchRecentSerchMealsLoading());
-    var response = await homeRepoImplement.fetchTrendingMeals(
+    var response = await homeRepoImplement.fetchRecipes(
       url: recentSearchUrl,
     );
     response.fold((failure) {
