@@ -224,6 +224,71 @@ class MealModel {
         'dateModified': dateModified,
       };
 
+  List<String> compressAllValidIngrediants() {
+    List<String> allIngrediants = [];
+    if (strIngredient1 != null && strIngredient1 != '') {
+      allIngrediants.add(strIngredient1!);
+    }
+    if (strIngredient2 != null && strIngredient2 != '') {
+      allIngrediants.add(strIngredient2!);
+    }
+    if (strIngredient3 != null && strIngredient3 != '') {
+      allIngrediants.add(strIngredient3!);
+    }
+    if (strIngredient4 != null && strIngredient4 != '') {
+      allIngrediants.add(strIngredient4!);
+    }
+    if (strIngredient5 != null && strIngredient5 != '') {
+      allIngrediants.add(strIngredient5!);
+    }
+    if (strIngredient6 != null && strIngredient6 != '') {
+      allIngrediants.add(strIngredient6!);
+    }
+    if (strIngredient7 != null && strIngredient7 != '') {
+      allIngrediants.add(strIngredient7!);
+    }
+    if (strIngredient8 != null && strIngredient8 != '') {
+      allIngrediants.add(strIngredient8!);
+    }
+    if (strIngredient9 != null && strIngredient9 != '') {
+      allIngrediants.add(strIngredient9!);
+    }
+    if (strIngredient10 != null && strIngredient10 != '') {
+      allIngrediants.add(strIngredient10!);
+    }
+    if (strIngredient11 != null && strIngredient11 != '') {
+      allIngrediants.add(strIngredient11!);
+    }
+    if (strIngredient12 != null && strIngredient12 != '') {
+      allIngrediants.add(strIngredient12!);
+    }
+    if (strIngredient13 != null && strIngredient13 != '') {
+      allIngrediants.add(strIngredient13!);
+    }
+    if (strIngredient14 != null && strIngredient14 != '') {
+      allIngrediants.add(strIngredient14!);
+    }
+    if (strIngredient5 != null && strIngredient15 != '') {
+      allIngrediants.add(strIngredient15!);
+    }
+    if (strIngredient16 != null && strIngredient16 != '') {
+      allIngrediants.add(strIngredient16!);
+    }
+    if (strIngredient17 != null && strIngredient17 != '') {
+      allIngrediants.add(strIngredient17!);
+    }
+    if (strIngredient18 != null && strIngredient18 != '') {
+      allIngrediants.add(strIngredient18!);
+    }
+    if (strIngredient19 != null && strIngredient19 != '') {
+      allIngrediants.add(strIngredient19!);
+    }
+    if (strIngredient20 != null && strIngredient20 != '') {
+      allIngrediants.add(strIngredient20!);
+    }
+    return allIngrediants;
+  }
+
   /// `dart:convert`
   ///
   /// Parses the string and returns the resulting Json object as [MealModel].

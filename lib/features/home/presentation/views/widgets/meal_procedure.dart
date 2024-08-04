@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:reciply/core/utils/app_colors.dart';
 import 'package:reciply/core/utils/app_styles.dart';
+import 'package:reciply/features/home/data/models/recipe_model/meal.dart';
 
 class MealProcedure extends StatefulWidget {
-  const MealProcedure({super.key});
-
+  const MealProcedure({super.key, required this.mealModel});
+  final MealModel mealModel;
   @override
   State<MealProcedure> createState() => _MealProcedureState();
 }
@@ -41,11 +42,13 @@ class _MealProcedureState extends State<MealProcedure>
           child: Padding(
             padding: const EdgeInsets.symmetric(
               horizontal: 15.0,
-              vertical: 15,
+              vertical: 18,
             ),
             child: Text(
-              'Preheat the oven to 200C/180C Fan/Gas 6.Put the biscuits in a large re-sealable freezer bag and bash with a rolling pin into fine crumbs. Melt the butter in a small pan, then add the biscuit crumbs and stir until coated with butter. Tip into the tart tin and, using the back of a spoon, press over the base and sides of the tin to give an even layer. Chill in the fridge while you make the filling.Cream together the butter and sugar until light and fluffy. You can do this in a food processor if you have one. Process for 2-3 minutes. Mix in the eggs, then add the ground almonds and almond extract and blend until well combined.',
-              style: AppStyles.semiBold14(context),
+              (widget.mealModel.strInstructions != null)
+                  ? widget.mealModel.strInstructions!
+                  : "No Published Procedure Yet",
+              style: AppStyles.semiBold16(context),
             ),
           ),
         ),

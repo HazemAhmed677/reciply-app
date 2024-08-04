@@ -1,20 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:reciply/features/home/data/models/recipe_model/meal.dart';
 import 'package:reciply/features/home/presentation/views/widgets/ingrediant_item.dart';
 
 class IngrediantsListView extends StatefulWidget {
-  const IngrediantsListView({super.key});
-
+  const IngrediantsListView({super.key, required this.mealModel});
+  final MealModel mealModel;
   @override
   State<IngrediantsListView> createState() => _IngrediantsListViewState();
 }
 
 class _IngrediantsListViewState extends State<IngrediantsListView>
     with SingleTickerProviderStateMixin {
+  late List<String> ingrediants;
   late AnimationController animationController;
   late Animation<double> fadeAnimation;
+
   @override
   void initState() {
     super.initState();
+    ingrediants = widget.mealModel.compressAllValidIngrediants();
     animationController = AnimationController(
       vsync: this,
       duration: const Duration(
@@ -28,19 +32,19 @@ class _IngrediantsListViewState extends State<IngrediantsListView>
 
   @override
   Widget build(BuildContext context) {
-    return SliverToBoxAdapter(
-      child: AnimatedBuilder(
-        animation: fadeAnimation,
-        builder: (BuildContext context, Widget? child) => FadeTransition(
-          opacity: fadeAnimation,
-          child: ListView.builder(
-            padding: EdgeInsets.zero,
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            itemCount: 8,
-            itemBuilder: (context, index) => const Padding(
-              padding: EdgeInsets.only(bottom: 12.0),
-              child: IngrediantItem(),
+    return AnimatedBuilder(
+      animation: fadeAnimation,
+      builder: (BuildContext context, Widget? child) => FadeTransition(
+        opacity: fadeAnimation,
+        child: ListView.builder(
+          padding: EdgeInsets.zero,
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          itemCount: ingrediants.length,
+          itemBuilder: (context, index) => Padding(
+            padding: const EdgeInsets.only(bottom: 14.0),
+            child: IngrediantItem(
+              ingrediantItem: ingrediants[index],
             ),
           ),
         ),

@@ -3,8 +3,8 @@ import 'package:reciply/core/utils/app_colors.dart';
 import 'package:reciply/core/utils/app_styles.dart';
 
 class IngrediantItem extends StatelessWidget {
-  const IngrediantItem({super.key});
-
+  const IngrediantItem({super.key, required this.ingrediantItem});
+  final String ingrediantItem;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -22,7 +22,7 @@ class IngrediantItem extends StatelessWidget {
         child: Row(
           children: [
             Text(
-              'Bread',
+              ingrediantItem,
               style: AppStyles.semiBold16(context).copyWith(
                 color: AppColors.n30Color,
               ),

@@ -10,11 +10,15 @@ class IntegrateIngredAndProcedCubit extends StatelessWidget {
   final MealModel mealModel;
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<IngrediantsAndProcedureCubit,
-        IngrediantsAndProcedureState>(
-      builder: (context, state) => (state is ProcedureState)
-          ? const SliverToBoxAdapter(child: MealProcedure())
-          : const IngrediantsListView(),
+    return SliverToBoxAdapter(
+      child: BlocBuilder<IngrediantsAndProcedureCubit,
+          IngrediantsAndProcedureState>(
+        builder: (context, state) => (state is ProcedureState)
+            ? MealProcedure(
+                mealModel: mealModel,
+              )
+            : IngrediantsListView(mealModel: mealModel),
+      ),
     );
   }
 }
