@@ -17,7 +17,9 @@ class IntegrateIngredAndProcedCubit extends StatelessWidget {
             ? MealProcedure(
                 mealModel: mealModel,
               )
-            : IngrediantsListView(mealModel: mealModel),
+            : IngrediantsListView(
+                mealModel: mealModel,
+              ),
       ),
     );
   }

@@ -8,16 +8,20 @@ class FetchMealByIdCubit extends Cubit<FetchMealByIdState> {
   FetchMealByIdCubit(this.homeRepoImplement) : super(FetchMealByIdInitial());
   final HomeRepoImplement homeRepoImplement;
 
-  Future<void> fetchCategorizedMealsRecipes({required int id}) async {
+  Future<dynamic> fetchMealByID({required int id}) async {
     emit(FetchMealByIDLoading());
     String url = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=$id';
     var response = await homeRepoImplement.fetchMealByID(
       url: url,
     );
+    late RecipesModel rrecipesModel;
+    print(response);
     response.fold((failure) {
       emit(FetchMealByIDFailure(failure.errorMsg));
     }, (recipesModel) {
       emit(FetchMealByIDSuccess(recipesModel));
+      rrecipesModel = recipesModel;
     });
+    return rrecipesModel;
   }
 }

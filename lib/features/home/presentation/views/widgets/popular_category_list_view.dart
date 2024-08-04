@@ -28,6 +28,7 @@ class _PopularCategoryListViewState extends State<PopularCategoryListView> {
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: SingleChildScrollView(
+              clipBehavior: Clip.none,
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: List.generate(
@@ -46,6 +47,7 @@ class _PopularCategoryListViewState extends State<PopularCategoryListView> {
                           child: PupularCategoryCard(
                             isActive: (currentIndex == index),
                             text: listOfCategories[index].strCategory!,
+                            isTheLast: (index == listOfCategories.length - 1),
                           ),
                         )
                       : const SizedBox(),

@@ -268,7 +268,7 @@ class MealModel {
     if (strIngredient14 != null && strIngredient14 != '') {
       allIngrediants.add(strIngredient14!);
     }
-    if (strIngredient5 != null && strIngredient15 != '') {
+    if (strIngredient15 != null && strIngredient15 != '') {
       allIngrediants.add(strIngredient15!);
     }
     if (strIngredient16 != null && strIngredient16 != '') {

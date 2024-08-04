@@ -7,13 +7,15 @@ class PupularCategoryCard extends StatelessWidget {
     super.key,
     required this.isActive,
     required this.text,
+    this.isTheLast = false,
   });
   final bool isActive;
+  final bool isTheLast;
   final String text;
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 8.0),
+      padding: EdgeInsets.only(right: (!isTheLast) ? 10.0 : 0),
       child: AnimatedContainer(
         duration: const Duration(
           milliseconds: 500,
@@ -29,11 +31,13 @@ class PupularCategoryCard extends StatelessWidget {
             horizontal: 14,
             vertical: 8,
           ),
-          child: Text(text,
-              textAlign: TextAlign.center,
-              style: AppStyles.semiBold14(context).copyWith(
-                color: (isActive) ? AppColors.white : AppColors.eeColor,
-              )),
+          child: Text(
+            text,
+            textAlign: TextAlign.center,
+            style: AppStyles.semiBold14(context).copyWith(
+              color: (isActive) ? AppColors.white : AppColors.eeColor,
+            ),
+          ),
         ),
       ),
     );

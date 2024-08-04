@@ -5,8 +5,10 @@ import 'package:reciply/core/utils/service_locator.dart';
 import 'package:reciply/features/home/data/models/recipe_model/meal.dart';
 import 'package:reciply/features/home/data/repos/home_repo_implement.dart';
 import 'package:reciply/features/home/presentation/manager/fetch_categorized_meals_cubit/fetch_categorized_meals_cubit.dart';
+import 'package:reciply/features/home/presentation/manager/fetch_meal_by_id_cubit/fetch_meal_by_id_cubit.dart';
 import 'package:reciply/features/home/presentation/manager/fetch_pupolar_categories.dart/fetch_pupolar_categories_cubit.dart';
 import 'package:reciply/features/home/presentation/manager/fetch_trending_cubit.dart/fetch_trending_cubit.dart';
+import 'package:reciply/features/home/presentation/manager/ingrediants_and_procedure_cubit/ingrediants_and_procedure_cubit.dart';
 import 'package:reciply/features/home/presentation/views/home_view.dart';
 import 'package:reciply/features/home/presentation/views/recipe_info_view.dart';
 import 'package:reciply/features/splash/presentation/views/splash_view.dart';
@@ -46,6 +48,11 @@ abstract class AppRouters {
                     category: 'Beef',
                   ),
               ),
+              BlocProvider(
+                create: (context) => FetchMealByIdCubit(
+                  getIt.get<HomeRepoImplement>(),
+                ),
+              ),
             ],
             child: const HomeView(),
           ),
@@ -56,11 +63,14 @@ abstract class AppRouters {
       GoRoute(
         path: recipeInfoID,
         pageBuilder: (context, state) => CustomViewAnimation(
-          child: RecipeInfoView(
-            mealModel: state.extra as MealModel,
+          child: BlocProvider(
+            create: (context) => IngrediantsAndProcedureCubit(),
+            child: RecipeInfoView(
+              mealModel: state.extra as MealModel,
+            ),
           ),
           key: state.pageKey,
-          duration: 200,
+          duration: 150,
         ),
       ),
     ],

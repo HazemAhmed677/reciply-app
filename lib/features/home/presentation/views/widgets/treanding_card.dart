@@ -25,7 +25,7 @@ class _TreandingCardState extends State<TreandingCard> {
       children: [
         Padding(
           padding: const EdgeInsets.only(
-            bottom: 8.0,
+            bottom: 10.0,
           ),
           child: SizedBox(
             height: 190,
@@ -42,17 +42,19 @@ class _TreandingCardState extends State<TreandingCard> {
                         color: Colors.grey.shade200,
                         offset: const Offset(
                           -2,
-                          4,
+                          8,
                         ),
                         blurRadius: 4,
                       ),
                     ],
                   ),
                   child: Card(
-                    elevation: 4,
+                    elevation: 10,
                     shadowColor: Colors.grey.shade200,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
+                      borderRadius: BorderRadius.circular(
+                        16,
+                      ),
                     ),
                     child: AspectRatio(
                       aspectRatio: 280 / 180,
@@ -100,7 +102,7 @@ class _TreandingCardState extends State<TreandingCard> {
                         color: Colors.black,
                         shadows: const [
                           Shadow(
-                            blurRadius: 10,
+                            blurRadius: 12,
                           ),
                         ],
                         size: 20,

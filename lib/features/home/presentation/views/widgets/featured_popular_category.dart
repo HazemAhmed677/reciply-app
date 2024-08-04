@@ -30,7 +30,7 @@ class FeaturedPopularCategory extends StatelessWidget {
           const PopularCategoryListView(),
           const PupolarDishesListView(),
           const SizedBox(
-            height: 4,
+            height: 10,
           ),
         ],
       ),

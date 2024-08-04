@@ -79,6 +79,12 @@ class _PupolarContainerElementsState extends State<PupolarContainerElements> {
                     (!flag)
                         ? FontAwesomeIcons.bookmark
                         : FontAwesomeIcons.solidBookmark,
+                    shadows: [
+                      Shadow(
+                        blurRadius: 8,
+                        color: Colors.grey.shade800,
+                      ),
+                    ],
                     color: Colors.black,
                     size: 14,
                   ),

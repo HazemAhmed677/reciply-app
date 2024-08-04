@@ -3,7 +3,7 @@ import 'package:bloc/bloc.dart';
 part 'ingrediants_and_procedure_state.dart';
 
 class IngrediantsAndProcedureCubit extends Cubit<IngrediantsAndProcedureState> {
-  IngrediantsAndProcedureCubit() : super(IngrediantsAndProcedureInitial());
+  IngrediantsAndProcedureCubit() : super(IngrediantsState());
   void getClicking(int index) {
     if (index == 1) {
       emit(ProcedureState());
