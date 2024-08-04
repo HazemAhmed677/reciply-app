@@ -1,11 +1,14 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:reciply/constants.dart';
+import 'package:reciply/features/home/data/models/categorized_meals_model/categorized_meal.dart';
 
 class PupolarDish extends StatelessWidget {
   const PupolarDish({
     super.key,
+    required this.categorizedMeal,
   });
-
+  final CategorizedMeal categorizedMeal;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -45,11 +48,11 @@ class PupolarDish extends StatelessWidget {
                   width: 6,
                 ),
               ),
-              child: const CircleAvatar(
+              child: CircleAvatar(
                 radius: 42,
-                backgroundImage: AssetImage(
-                  testImage,
-                ),
+                backgroundImage: (categorizedMeal.strMealThumb != null)
+                    ? CachedNetworkImageProvider(categorizedMeal.strMealThumb!)
+                    : const AssetImage(testImage),
               ),
             ),
           ),

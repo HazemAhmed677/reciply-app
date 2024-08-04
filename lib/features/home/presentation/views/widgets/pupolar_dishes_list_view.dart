@@ -23,16 +23,19 @@ class PupolarDishesListView extends StatelessWidget {
             if (state is FetchCategorizedMealsLoading) {
               return const Center(child: CircularProgressIndicator());
             } else if (state is FetchCategorizedMealsSuccess) {
+              var listOfDishes = state.categorizedMealsModel.meals;
               return ListView.builder(
                 physics: const BouncingScrollPhysics(),
                 clipBehavior: Clip.none,
                 scrollDirection: Axis.horizontal,
-                itemCount: 8,
+                itemCount: listOfDishes?.length ?? 0,
                 itemBuilder: (context, index) => Padding(
                   padding: EdgeInsets.only(
-                    right: (index != 7) ? 16 : 0,
+                    right: (index != listOfDishes!.length - 1) ? 16 : 0,
                   ),
-                  child: const PupolarDishStack(),
+                  child: PupolarDishStack(
+                    categorizedMeal: listOfDishes[index],
+                  ),
                 ),
               );
             } else if (state is FetchCategorizedMealsFailure) {

@@ -1,11 +1,12 @@
-class Meal {
+class CategorizedMeal {
   String? strMeal;
   String? strMealThumb;
   String? idMeal;
 
-  Meal({this.strMeal, this.strMealThumb, this.idMeal});
+  CategorizedMeal({this.strMeal, this.strMealThumb, this.idMeal});
 
-  factory Meal.fromJson(Map<String, dynamic> json) => Meal(
+  factory CategorizedMeal.fromJson(Map<String, dynamic> json) =>
+      CategorizedMeal(
         strMeal: json['strMeal'] as String?,
         strMealThumb: json['strMealThumb'] as String?,
         idMeal: json['idMeal'] as String?,

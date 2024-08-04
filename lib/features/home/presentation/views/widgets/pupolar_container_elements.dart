@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:reciply/core/utils/app_colors.dart';
 import 'package:reciply/core/utils/app_styles.dart';
+import 'package:reciply/features/home/data/models/categorized_meals_model/categorized_meal.dart';
 
 class PupolarContainerElements extends StatefulWidget {
   const PupolarContainerElements({
     super.key,
+    required this.categorizedMeal,
   });
-
+  final CategorizedMeal categorizedMeal;
   @override
   State<PupolarContainerElements> createState() =>
       _PupolarContainerElementsState();
@@ -26,7 +28,9 @@ class _PupolarContainerElementsState extends State<PupolarContainerElements> {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 12.0),
           child: Text(
-            'Pepper sweetcorn ramen',
+            widget.categorizedMeal.strMeal ?? '',
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
             textAlign: TextAlign.center,
             style: AppStyles.semiBold14(context),
           ),

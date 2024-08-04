@@ -1,14 +1,14 @@
-import 'meal.dart';
+import 'categorized_meal.dart';
 
 class CategorizedMealsModel {
-  List<Meal>? meals;
+  List<CategorizedMeal>? meals;
 
   CategorizedMealsModel({this.meals});
 
   factory CategorizedMealsModel.fromJson(Map<String, dynamic> json) {
     return CategorizedMealsModel(
       meals: (json['meals'] as List<dynamic>?)
-          ?.map((e) => Meal.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => CategorizedMeal.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
   }
