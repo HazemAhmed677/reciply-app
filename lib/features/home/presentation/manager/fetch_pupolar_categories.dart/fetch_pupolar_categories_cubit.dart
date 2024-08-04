@@ -10,9 +10,9 @@ class FetchPupolarCategoriesCubit extends Cubit<FetchPupolarCategoriesState> {
       : super(FetchPupolarCategoriesInitial());
   final HomeRepoImplement homeRepoImplement;
 
-  Future<void> fetchTrendingRecipes() async {
+  Future<void> fetchPupolarCategoriesRecipes() async {
     emit(FetchPupolarCategoriesLoading());
-    var response = await homeRepoImplement.fetchTrendingMeals(
+    var response = await homeRepoImplement.fetchPupolarCategories(
       url: pupolarCategories,
     );
     response.fold((failure) {
