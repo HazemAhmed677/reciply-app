@@ -19,7 +19,8 @@ class FeaturedTrendingListView extends StatelessWidget {
         height: 230,
         child: ListView.builder(
           clipBehavior: Clip.none,
-          physics: const BouncingScrollPhysics(),
+          physics: const BouncingScrollPhysics(
+              parent: AlwaysScrollableScrollPhysics()),
           padding: EdgeInsets.zero,
           scrollDirection: Axis.horizontal,
           itemCount: recipesModel.meals?.length ?? 0,

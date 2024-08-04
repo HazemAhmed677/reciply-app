@@ -19,7 +19,7 @@ class _HomeTopSectionState extends State<HomeTopSection> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(
-            height: 16,
+            height: 8,
           ),
           Padding(
             padding: const EdgeInsets.only(left: 24),

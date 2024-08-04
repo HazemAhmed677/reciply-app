@@ -16,7 +16,9 @@ class HomeViewBody extends StatelessWidget {
     return SafeArea(
       child: CustomScrollView(
         clipBehavior: Clip.none,
-        physics: const BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(
+          parent: AlwaysScrollableScrollPhysics(),
+        ),
         slivers: [
           const HomeTopSection(),
           BlocBuilder<FetchTrendingCubit, FetchTrendingState>(
