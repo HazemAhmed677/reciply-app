@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:reciply/core/utils/app_colors.dart';
 import 'package:reciply/core/utils/app_styles.dart';
 import 'package:reciply/features/home/presentation/manager/fetch_categorized_meals_cubit/fetch_categorized_meals_cubit.dart';
 import 'package:reciply/features/home/presentation/manager/fetch_meal_by_id_cubit/fetch_meal_by_id_cubit.dart';
@@ -44,9 +43,9 @@ class _PupolarDishesListViewState extends State<PupolarDishesListView> {
                     right: (index != listOfDishes!.length - 1) ? 16 : 0,
                   ),
                   child: InkWell(
-                    splashColor: AppColors.e2Color,
+                    splashColor: const Color.fromARGB(255, 213, 100, 100),
                     borderRadius: BorderRadius.circular(
-                      22,
+                      18,
                     ),
                     onTap: () async {
                       // carefull here
