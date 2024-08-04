@@ -7,6 +7,8 @@ abstract class HomeRepo {
       {required String url});
   Future<Either<FaluireService, RecipesModel>> fetchPupolarCategories(
       {required String url});
-  Future<Either<FaluireService, RecipesModel>> fetchCategoryMeals(
+  Future<Either<FaluireService, RecipesModel>> fetchCategorizedMeals(
       {required String url, required String category});
+  Future<Either<FaluireService, RecipesModel>> fetchMealByID(
+      {required String url});
 }
