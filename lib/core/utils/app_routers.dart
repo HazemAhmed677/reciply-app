@@ -28,11 +28,13 @@ abstract class AppRouters {
           child: MultiBlocProvider(
             providers: [
               BlocProvider(
+                //Done
                 create: (context) => FetchTrendingCubit(
                   homeRepoImplement: getIt.get<HomeRepoImplement>(),
                 )..fetchTrendingRecipes(),
               ),
               BlocProvider(
+                //Done
                 create: (context) => FetchPupolarCategoriesCubit(
                   homeRepoImplement: getIt.get<HomeRepoImplement>(),
                 )..fetchPupolarCategoriesRecipes(),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:reciply/core/utils/app_styles.dart';
+import 'package:reciply/features/home/presentation/manager/fetch_categorized_meals_cubit/fetch_categorized_meals_cubit.dart';
 import 'package:reciply/features/home/presentation/manager/fetch_pupolar_categories.dart/fetch_pupolar_categories_cubit.dart';
 import 'package:reciply/features/home/presentation/views/widgets/pupular_category_card.dart';
 
@@ -23,6 +24,13 @@ class _PopularCategoryListViewState extends State<PopularCategoryListView> {
           return const Center(child: CircularProgressIndicator());
         } else if (state is FetchPupolarCategoriesSuccess) {
           var listOfCategories = state.categoriesModel.meals;
+          if (listOfCategories != null &&
+              listOfCategories[0].strCategory != null) {
+            ///////////////// take care here
+            BlocProvider.of<FetchCategorizedMealsCubit>(context)
+                .fetchCategorizedMealsRecipes(
+                    category: listOfCategories[0].strCategory!);
+          }
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: SingleChildScrollView(
@@ -32,9 +40,14 @@ class _PopularCategoryListViewState extends State<PopularCategoryListView> {
                   (listOfCategories != null) ? listOfCategories.length : 0,
                   (index) => (listOfCategories![index].strCategory != null)
                       ? GestureDetector(
-                          onTap: () {
+                          onTap: () async {
                             currentIndex = index;
                             setState(() {});
+                            await BlocProvider.of<FetchCategorizedMealsCubit>(
+                                    context)
+                                .fetchCategorizedMealsRecipes(
+                                    category:
+                                        listOfCategories[index].strCategory!);
                           },
                           child: PupularCategoryCard(
                             isActive: (currentIndex == index),
