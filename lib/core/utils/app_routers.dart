@@ -1,9 +1,11 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:reciply/core/helpers/custom_view_animation.dart';
-import 'package:reciply/core/utils/api_service.dart';
+import 'package:reciply/core/utils/service_locator.dart';
 import 'package:reciply/features/home/data/models/recipe_model/meal.dart';
 import 'package:reciply/features/home/data/repos/home_repo_implement.dart';
+import 'package:reciply/features/home/presentation/manager/fetch_categorized_meals_cubit/fetch_categorized_meals_cubit.dart';
+import 'package:reciply/features/home/presentation/manager/fetch_pupolar_categories.dart/fetch_pupolar_categories_cubit.dart';
 import 'package:reciply/features/home/presentation/manager/fetch_trending_cubit.dart/fetch_trending_cubit.dart';
 import 'package:reciply/features/home/presentation/views/home_view.dart';
 import 'package:reciply/features/home/presentation/views/recipe_info_view.dart';
@@ -23,26 +25,30 @@ abstract class AppRouters {
       GoRoute(
         path: homeID,
         pageBuilder: (context, state) => CustomViewAnimation(
-          child: BlocProvider(
-            create: (context) => FetchTrendingCubit(
-              homeRepoImplement: HomeRepoImplement(
-                apiService: ApiService(),
+          child: MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                create: (context) => FetchTrendingCubit(
+                  homeRepoImplement: getIt.get<HomeRepoImplement>(),
+                )..fetchTrendingRecipes(),
               ),
-            )..fetchTrendingRecipes(),
+              BlocProvider(
+                create: (context) => FetchPupolarCategoriesCubit(
+                  homeRepoImplement: getIt.get<HomeRepoImplement>(),
+                )..fetchPupolarCategoriesRecipes(),
+              ),
+              BlocProvider(
+                create: (context) => FetchCategorizedMealsCubit(
+                  getIt.get<HomeRepoImplement>(),
+                ),
+              ),
+            ],
             child: const HomeView(),
           ),
           key: state.pageKey,
           duration: 300,
         ),
       ),
-      // GoRoute(
-      //   path: searchID,
-      //   pageBuilder: (context, state) => CustomViewAnimation(
-      //     child: const SearchView(),
-      //     key: state.pageKey,
-      //     duration: 0,
-      //   ),
-      // ),
       GoRoute(
         path: recipeInfoID,
         pageBuilder: (context, state) => CustomViewAnimation(

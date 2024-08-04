@@ -25,7 +25,7 @@ class _TreandingCardState extends State<TreandingCard> {
       children: [
         Padding(
           padding: const EdgeInsets.only(
-            bottom: 12.0,
+            bottom: 8.0,
           ),
           child: SizedBox(
             height: 190,

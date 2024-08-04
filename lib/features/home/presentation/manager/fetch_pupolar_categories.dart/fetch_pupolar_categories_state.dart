@@ -7,8 +7,8 @@ final class FetchPupolarCategoriesInitial extends FetchPupolarCategoriesState {}
 final class FetchPupolarCategoriesLoading extends FetchPupolarCategoriesState {}
 
 final class FetchPupolarCategoriesSuccess extends FetchPupolarCategoriesState {
-  final RecipesModel recipesModel;
-  FetchPupolarCategoriesSuccess(this.recipesModel);
+  final CategoriesModel categoriesModel;
+  FetchPupolarCategoriesSuccess(this.categoriesModel);
 }
 
 final class FetchPupolarCategoriesFailure extends FetchPupolarCategoriesState {

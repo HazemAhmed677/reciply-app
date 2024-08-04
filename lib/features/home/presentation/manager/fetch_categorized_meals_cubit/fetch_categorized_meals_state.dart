@@ -7,8 +7,8 @@ final class FetchCategorizedMealsInitial extends FetchCategorizedMealsState {}
 final class FetchCategorizedMealsLoading extends FetchCategorizedMealsState {}
 
 final class FetchCategorizedMealsSuccess extends FetchCategorizedMealsState {
-  final RecipesModel recipesModel;
-  FetchCategorizedMealsSuccess(this.recipesModel);
+  final CategoriesModel categoriesModel;
+  FetchCategorizedMealsSuccess(this.categoriesModel);
 }
 
 final class FetchCategorizedMealsFailure extends FetchCategorizedMealsState {
