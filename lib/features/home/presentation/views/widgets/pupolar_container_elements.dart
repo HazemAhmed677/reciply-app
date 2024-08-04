@@ -35,8 +35,10 @@ class _PupolarContainerElementsState extends State<PupolarContainerElements> {
             style: AppStyles.semiBold14(context),
           ),
         ),
-        const SizedBox(
-          height: 18,
+        const Expanded(
+          child: SizedBox(
+            height: 18,
+          ),
         ),
         Padding(
           padding: const EdgeInsets.only(

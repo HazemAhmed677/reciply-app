@@ -15,7 +15,9 @@ class PupularCategoryCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(right: 8.0),
       child: AnimatedContainer(
-        duration: const Duration(milliseconds: 500),
+        duration: const Duration(
+          milliseconds: 500,
+        ),
         decoration: BoxDecoration(
           color: (isActive) ? AppColors.e2Color : Colors.transparent,
           borderRadius: BorderRadius.circular(

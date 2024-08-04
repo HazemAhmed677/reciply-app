@@ -42,7 +42,9 @@ abstract class AppRouters {
               BlocProvider(
                 create: (context) => FetchCategorizedMealsCubit(
                   getIt.get<HomeRepoImplement>(),
-                ),
+                )..fetchCategorizedMealsRecipes(
+                    category: 'Beef',
+                  ),
               ),
             ],
             child: const HomeView(),

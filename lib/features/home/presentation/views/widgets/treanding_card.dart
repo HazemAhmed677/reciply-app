@@ -35,7 +35,7 @@ class _TreandingCardState extends State<TreandingCard> {
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(
-                      58,
+                      16,
                     ),
                     boxShadow: [
                       BoxShadow(
@@ -56,32 +56,27 @@ class _TreandingCardState extends State<TreandingCard> {
                     ),
                     child: AspectRatio(
                       aspectRatio: 280 / 180,
-                      child: Padding(
-                        padding: const EdgeInsets.only(
-                          bottom: 0.20,
+                      child: InkWell(
+                        borderRadius: BorderRadius.circular(
+                          16,
                         ),
-                        child: InkWell(
-                          borderRadius: BorderRadius.circular(
-                            8,
+                        onTap: () {
+                          GoRouter.of(context).push(AppRouters.recipeInfoID,
+                              extra: widget.mealModel);
+                        },
+                        child: Container(
+                          clipBehavior: Clip.hardEdge,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(
+                              16,
+                            ),
                           ),
-                          onTap: () {
-                            GoRouter.of(context).push(AppRouters.recipeInfoID,
-                                extra: widget.mealModel);
-                          },
-                          child: Container(
-                            clipBehavior: Clip.hardEdge,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(
-                                8,
-                              ),
-                            ),
-                            child: CachedNetworkImage(
-                              fit: BoxFit.cover,
-                              imageUrl: widget.mealModel.strMealThumb!,
-                              errorWidget: (context, url, error) {
-                                return Image.asset(testImage);
-                              },
-                            ),
+                          child: CachedNetworkImage(
+                            fit: BoxFit.cover,
+                            imageUrl: widget.mealModel.strMealThumb!,
+                            errorWidget: (context, url, error) {
+                              return Image.asset(testImage);
+                            },
                           ),
                         ),
                       ),

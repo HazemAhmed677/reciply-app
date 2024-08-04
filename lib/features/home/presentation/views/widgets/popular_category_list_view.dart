@@ -15,6 +15,7 @@ class PopularCategoryListView extends StatefulWidget {
 
 class _PopularCategoryListViewState extends State<PopularCategoryListView> {
   int currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<FetchPupolarCategoriesCubit,
@@ -24,13 +25,6 @@ class _PopularCategoryListViewState extends State<PopularCategoryListView> {
           return const Center(child: CircularProgressIndicator());
         } else if (state is FetchPupolarCategoriesSuccess) {
           var listOfCategories = state.categoriesModel.meals;
-          if (listOfCategories != null &&
-              listOfCategories[0].strCategory != null) {
-            ///////////////// take care here
-            BlocProvider.of<FetchCategorizedMealsCubit>(context)
-                .fetchCategorizedMealsRecipes(
-                    category: listOfCategories[0].strCategory!);
-          }
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: SingleChildScrollView(
