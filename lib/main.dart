@@ -6,12 +6,12 @@ import 'package:reciply/constants.dart';
 import 'package:reciply/core/utils/app_routers.dart';
 import 'package:reciply/core/utils/service_locator.dart';
 import 'package:reciply/core/utils/simple_bloc_observer.dart';
-import 'package:reciply/features/home/data/models/recipe_model/meal_model.dart';
+import 'package:reciply/core/models/recipe_model/meal_model.dart';
 
 void main() async {
   setup(); // for dependency injection
   await Hive.initFlutter();
-
+  Hive.registerAdapter(MealModelAdapter());
   await Hive.openBox<MealModel>(kMealBox);
   Bloc.observer = SimpleBlocObserver();
   runApp(

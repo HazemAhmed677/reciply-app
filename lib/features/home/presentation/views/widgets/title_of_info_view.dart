@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:reciply/core/utils/app_styles.dart';
-import 'package:reciply/features/home/data/models/recipe_model/meal_model.dart';
+import 'package:reciply/core/models/recipe_model/meal_model.dart';
 import 'package:reciply/features/saved/presentation/views/widgets/saved_item.dart';
 
 class TitleOfInfoView extends StatelessWidget {

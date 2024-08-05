@@ -4,6 +4,9 @@ import 'package:reciply/core/utils/service_locator.dart';
 import 'package:reciply/features/home/data/repos/home_repo_implement.dart';
 import 'package:reciply/features/home/presentation/views/widgets/cusotm_bottom_navigation_bar.dart';
 import 'package:reciply/features/home/presentation/views/widgets/home_view_body.dart';
+import 'package:reciply/features/saved/presentation/manager/add_meal_cubit/add_meal_cubit_cubit.dart';
+import 'package:reciply/features/saved/presentation/manager/delete_meal_cubit/delete_meal_cubit_cubit.dart';
+import 'package:reciply/features/saved/presentation/manager/fetch_all_meals_cubit/fetch_all_meals_cubit_cubit.dart';
 import 'package:reciply/features/saved/presentation/views/saved_view.dart';
 import 'package:reciply/features/search/presnetation/manager/fetch_searched_meals_cubit/fetch_searched_meals_cubit.dart';
 import 'package:reciply/features/search/presnetation/views/search_view.dart';
@@ -41,20 +44,31 @@ class _HomeViewState extends State<HomeView> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      extendBody: true,
-      body: AnimatedSwitcher(
-        duration: const Duration(
-          milliseconds: 600,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => AddMealCubitCubit(),
         ),
-        child: screens[currentIndex],
-      ),
-      bottomNavigationBar: CusotmBottomNavigationBar(
-        currentIndex: currentIndex,
-        onTap: (index) {
-          currentIndex = index;
-          setState(() {});
-        },
+        BlocProvider(
+          create: (context) => FetchAllMealsCubitCubit(),
+        ),
+        BlocProvider(create: (context) => DeleteMealCubit())
+      ],
+      child: Scaffold(
+        extendBody: true,
+        body: AnimatedSwitcher(
+          duration: const Duration(
+            milliseconds: 600,
+          ),
+          child: screens[currentIndex],
+        ),
+        bottomNavigationBar: CusotmBottomNavigationBar(
+          currentIndex: currentIndex,
+          onTap: (index) {
+            currentIndex = index;
+            setState(() {});
+          },
+        ),
       ),
     );
   }

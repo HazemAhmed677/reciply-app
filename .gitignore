@@ -19,6 +19,8 @@ lib/features/home/data/repos/home_repo_implement.dart
 lib/core/utils/api_service.dart
 lib/features/home/presentation/manager/fetch_trending_cubit.dart/fetch_trending_cubit.dart
 lib/features/search/data/repos/search_repo_implement.dart
+lib/features/saved/presentation/manager/add_meal_cubit
+lib/features/saved/presentation/manager/fetch_all_meals_cubit
 # The .vscode folder contains launch configuration and tasks you configure in
 # VS Code which you may wish to be included in version control, so this line
 # is commented out by default.

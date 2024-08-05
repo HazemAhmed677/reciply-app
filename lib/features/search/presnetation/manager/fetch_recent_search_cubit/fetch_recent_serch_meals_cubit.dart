@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:reciply/constants.dart';
-import 'package:reciply/features/home/data/models/recipe_model/recipe_model.dart';
+import 'package:reciply/core/models/recipe_model/recipe_model.dart';
 import 'package:reciply/features/home/data/repos/home_repo_implement.dart';
 
 part 'fetch_recent_serch_meals_state.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:reciply/core/utils/app_colors.dart';
 import 'package:reciply/core/utils/app_styles.dart';
-import 'package:reciply/features/home/data/models/recipe_model/meal_model.dart';
+import 'package:reciply/core/models/recipe_model/meal_model.dart';
 
 class MealProcedure extends StatefulWidget {
   const MealProcedure({super.key, required this.mealModel});

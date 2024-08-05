@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:reciply/features/home/data/models/recipe_model/recipe_model.dart';
+import 'package:reciply/core/models/recipe_model/recipe_model.dart';
 import 'package:reciply/features/home/presentation/views/widgets/featured_trending_list_view.dart';
 import 'package:reciply/features/home/presentation/views/widgets/trending_now_word,.dart';
 

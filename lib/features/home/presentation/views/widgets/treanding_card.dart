@@ -1,13 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:reciply/constants.dart';
-import 'package:reciply/core/utils/app_colors.dart';
 import 'package:reciply/core/utils/app_routers.dart';
 import 'package:reciply/core/utils/app_styles.dart';
-import 'package:reciply/features/home/data/models/recipe_model/meal_model.dart';
+import 'package:reciply/core/models/recipe_model/meal_model.dart';
+import 'package:reciply/core/widgets/save_widget.dart';
 
 class TreandingCard extends StatefulWidget {
   const TreandingCard({super.key, required this.mealModel});
@@ -88,26 +87,9 @@ class _TreandingCardState extends State<TreandingCard> {
                 Positioned(
                   top: 8,
                   right: 12,
-                  child: InkWell(
-                    onTap: () {
-                      flag = !flag;
-                      setState(() {});
-                    },
-                    child: CircleAvatar(
-                      backgroundColor: AppColors.white,
-                      child: Icon(
-                        (!flag)
-                            ? FontAwesomeIcons.bookmark
-                            : FontAwesomeIcons.solidBookmark,
-                        color: Colors.black,
-                        shadows: const [
-                          Shadow(
-                            blurRadius: 12,
-                          ),
-                        ],
-                        size: 20,
-                      ),
-                    ),
+                  child: SaveWidget(
+                    mealModel: widget.mealModel,
+                    borderRadius: 12,
                   ),
                 ),
                 InkWell(

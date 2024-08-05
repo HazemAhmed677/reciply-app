@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:reciply/features/home/data/models/recipe_model/recipe_model.dart';
+import 'package:reciply/core/models/recipe_model/recipe_model.dart';
 import 'package:reciply/features/home/data/repos/home_repo_implement.dart';
 
 part 'fetch_meal_by_id_state.dart';
