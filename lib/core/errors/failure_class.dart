@@ -40,7 +40,7 @@ class FaluireService {
     } else if (statusCode == 404) {
       return FaluireService('Your request not found');
     } else {
-      return FaluireService('Oops, there somthing wrong!');
+      return FaluireService('Oops, there somthing wronggvu!');
     }
   }
 }

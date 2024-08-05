@@ -39,7 +39,7 @@ class SearhcedItem extends StatelessWidget {
                 end: Alignment.bottomCenter,
                 colors: [
                   Colors.transparent,
-                  Colors.grey.shade400.withOpacity(0.5),
+                  Colors.grey.shade700.withOpacity(0.5),
                   Colors.black.withOpacity(0.4),
                   Colors.black.withOpacity(0.8),
                 ],
