@@ -14,42 +14,54 @@ class GridViewOfSearch extends StatelessWidget {
     return BlocBuilder<FetchRecentSerchMealsCubit, FetchRecentSerchMealsState>(
       builder: (context, state) {
         if (state is FetchRecentSerchMealsLoading) {
-          return Center(child: CircularProgressIndicator());
+          return const SliverToBoxAdapter(
+              child: Center(child: CircularProgressIndicator()));
         } else if (state is FetchRecentSerchMealsSuccess) {
           var meals = state.recipesModel.meals;
-          return SliverAnimatedGrid(
-            initialItemCount: meals?.length ?? 0,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              crossAxisSpacing: 15,
-              mainAxisSpacing: 15,
-            ),
-            itemBuilder: (context, index, animatable) => AnimatedBuilder(
-              animation: animatable,
-              builder: (context, _) => FadeTransition(
-                opacity: animatable,
-                child: InkWell(
-                  borderRadius: BorderRadius.circular(16),
-                  onTap: () {
-                    GoRouter.of(context)
-                        .push(AppRouters.recipeInfoID, extra: meals[index]);
-                  },
-                  child: SearhcedItem(
-                    mealModel: meals![index],
+          return (meals != null && meals.isNotEmpty)
+              ? SliverAnimatedGrid(
+                  initialItemCount: meals.length,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 15,
+                    mainAxisSpacing: 15,
                   ),
-                ),
+                  itemBuilder: (context, index, animatable) => AnimatedBuilder(
+                    animation: animatable,
+                    builder: (context, _) => FadeTransition(
+                      opacity: animatable,
+                      child: InkWell(
+                        borderRadius: BorderRadius.circular(16),
+                        onTap: () {
+                          GoRouter.of(context).push(AppRouters.recipeInfoID,
+                              extra: meals[index]);
+                        },
+                        child: SearhcedItem(
+                          mealModel: meals[index],
+                        ),
+                      ),
+                    ),
+                  ),
+                )
+              : SliverToBoxAdapter(
+                  child: Center(
+                    child: Text(
+                      'Meal is not found',
+                      style: AppStyles.regular16(context),
+                    ),
+                  ),
+                );
+        } else if (state is FetchRecentSerchMealsFailure) {
+          return SliverToBoxAdapter(
+            child: Center(
+              child: Text(
+                state.errorMsg,
+                style: AppStyles.regular16(context),
               ),
             ),
           );
-        } else if (state is FetchRecentSerchMealsFailure) {
-          return Center(
-            child: Text(
-              state.errorMsg,
-              style: AppStyles.regular16(context),
-            ),
-          );
         } else {
-          return const SizedBox();
+          return const SliverToBoxAdapter(child: SizedBox());
         }
       },
     );

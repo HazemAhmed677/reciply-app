@@ -16,6 +16,7 @@ class RecipeInfoBody extends StatelessWidget {
             horizontal: 20.0,
           ),
           child: CustomScrollView(
+            physics: const BouncingScrollPhysics(),
             slivers: [
               SliverToBoxAdapter(
                   child: TitleOfInfoView(

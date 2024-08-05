@@ -10,7 +10,7 @@ void main() {
   Bloc.observer = SimpleBlocObserver();
   runApp(
     DevicePreview(
-      enabled: true,
+      enabled: false,
       builder: (BuildContext context) => const ReciplyApp(),
     ),
   );
