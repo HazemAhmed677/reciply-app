@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:reciply/constants.dart';
 import 'package:reciply/core/utils/app_colors.dart';
 import 'package:reciply/core/utils/app_styles.dart';
-import 'package:reciply/features/home/data/models/recipe_model/meal.dart';
+import 'package:reciply/features/home/data/models/recipe_model/meal_model.dart';
 
 class SearhcedItem extends StatelessWidget {
   const SearhcedItem({super.key, required this.mealModel});
@@ -22,7 +22,7 @@ class SearhcedItem extends StatelessWidget {
                 fit: BoxFit.cover,
                 image: (mealModel.strMealThumb != null)
                     ? CachedNetworkImageProvider(mealModel.strMealThumb!)
-                    : const AssetImage(testImage),
+                    : const AssetImage(kTestImage),
               ),
             ),
           ),

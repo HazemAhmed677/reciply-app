@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:reciply/core/utils/app_colors.dart';
 import 'package:reciply/core/utils/app_styles.dart';
-import 'package:reciply/features/search/presnetation/manager/fetch_searched_meals_cubit/fetch_searched_meals_cubit.dart';
 
 class CustomTextField extends StatefulWidget {
   const CustomTextField({

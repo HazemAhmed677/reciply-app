@@ -13,7 +13,7 @@ class FetchRecentSerchMealsCubit extends Cubit<FetchRecentSerchMealsState> {
   Future<void> fetchRecentSearchMeals() async {
     emit(FetchRecentSerchMealsLoading());
     var response = await homeRepoImplement.fetchRecipes(
-      url: recentSearchUrl,
+      url: kRecentSearchUrl,
     );
     response.fold((failure) {
       emit(FetchRecentSerchMealsFailure(failure.errorMsg));

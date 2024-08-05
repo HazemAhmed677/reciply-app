@@ -2,7 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:reciply/core/helpers/custom_view_animation.dart';
 import 'package:reciply/core/utils/service_locator.dart';
-import 'package:reciply/features/home/data/models/recipe_model/meal.dart';
+import 'package:reciply/features/home/data/models/recipe_model/meal_model.dart';
 import 'package:reciply/features/home/data/repos/home_repo_implement.dart';
 import 'package:reciply/features/home/presentation/manager/fetch_categorized_meals_cubit/fetch_categorized_meals_cubit.dart';
 import 'package:reciply/features/home/presentation/manager/fetch_meal_by_id_cubit/fetch_meal_by_id_cubit.dart';

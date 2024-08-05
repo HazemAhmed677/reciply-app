@@ -1,29 +1,50 @@
-import 'dart:convert';
+import 'package:hive/hive.dart';
+part 'meal_model.g.dart';
 
+@HiveType(typeId: 0)
 class MealModel {
   String? idMeal;
+  @HiveField(0)
   String? strMeal;
   dynamic strDrinkAlternate;
   String? strCategory;
   String? strArea;
+  @HiveField(1)
   String? strInstructions;
+  @HiveField(2)
   String? strMealThumb;
   String? strTags;
+  @HiveField(3)
   String? strYoutube;
+  @HiveField(4)
   String? strIngredient1;
+  @HiveField(5)
   String? strIngredient2;
+  @HiveField(6)
   String? strIngredient3;
+  @HiveField(7)
   String? strIngredient4;
+  @HiveField(8)
   String? strIngredient5;
+  @HiveField(9)
   String? strIngredient6;
+  @HiveField(10)
   String? strIngredient7;
+  @HiveField(11)
   String? strIngredient8;
+  @HiveField(12)
   String? strIngredient9;
+  @HiveField(13)
   String? strIngredient10;
+  @HiveField(14)
   String? strIngredient11;
+  @HiveField(15)
   String? strIngredient12;
+  @HiveField(16)
   String? strIngredient13;
+  @HiveField(17)
   String? strIngredient14;
+  @HiveField(18)
   String? strIngredient15;
   dynamic strIngredient16;
   dynamic strIngredient17;
@@ -288,16 +309,4 @@ class MealModel {
     }
     return allIngrediants;
   }
-
-  /// `dart:convert`
-  ///
-  /// Parses the string and returns the resulting Json object as [MealModel].
-  factory MealModel.fromJson(String data) {
-    return MealModel.fromMap(json.decode(data) as Map<String, dynamic>);
-  }
-
-  /// `dart:convert`
-  ///
-  /// Converts [MealModel] to a JSON string.
-  String toJson() => json.encode(toMap());
 }

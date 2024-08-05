@@ -52,7 +52,7 @@ class PupolarDish extends StatelessWidget {
                 radius: 42,
                 backgroundImage: (categorizedMeal.strMealThumb != null)
                     ? CachedNetworkImageProvider(categorizedMeal.strMealThumb!)
-                    : const AssetImage(testImage),
+                    : const AssetImage(kTestImage),
               ),
             ),
           ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:reciply/features/home/data/models/recipe_model/meal.dart';
+import 'package:reciply/features/home/data/models/recipe_model/meal_model.dart';
 import 'package:reciply/features/home/presentation/views/widgets/integrate_ingred_and_proced_cubit.dart';
 import 'package:reciply/features/home/presentation/views/widgets/item_info_middle_section.dart';
 import 'package:reciply/features/home/presentation/views/widgets/title_of_info_view.dart';

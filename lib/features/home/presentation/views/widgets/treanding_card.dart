@@ -7,7 +7,7 @@ import 'package:reciply/constants.dart';
 import 'package:reciply/core/utils/app_colors.dart';
 import 'package:reciply/core/utils/app_routers.dart';
 import 'package:reciply/core/utils/app_styles.dart';
-import 'package:reciply/features/home/data/models/recipe_model/meal.dart';
+import 'package:reciply/features/home/data/models/recipe_model/meal_model.dart';
 
 class TreandingCard extends StatefulWidget {
   const TreandingCard({super.key, required this.mealModel});
@@ -77,7 +77,7 @@ class _TreandingCardState extends State<TreandingCard> {
                             fit: BoxFit.cover,
                             imageUrl: widget.mealModel.strMealThumb!,
                             errorWidget: (context, url, error) {
-                              return Image.asset(testImage);
+                              return Image.asset(kTestImage);
                             },
                           ),
                         ),

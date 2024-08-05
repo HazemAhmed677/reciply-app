@@ -13,7 +13,7 @@ class FetchPupolarCategoriesCubit extends Cubit<FetchPupolarCategoriesState> {
   Future<void> fetchPupolarCategoriesRecipes() async {
     emit(FetchPupolarCategoriesLoading());
     var response = await homeRepoImplement.fetchPupolarCategories(
-      url: pupolarCategories,
+      url: kPupolarCategories,
     );
     response.fold((failure) {
       emit(FetchPupolarCategoriesFailure(failure.errorMsg));

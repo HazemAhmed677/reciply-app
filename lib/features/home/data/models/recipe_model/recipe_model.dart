@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'meal.dart';
+import 'meal_model.dart';
 
 class RecipesModel {
   List<MealModel>? meals;
