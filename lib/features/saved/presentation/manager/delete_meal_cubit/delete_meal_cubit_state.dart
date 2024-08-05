@@ -1,4 +1,4 @@
-part of 'delete_meal_cubit_cubit.dart';
+part of 'delete_meal_cubit.dart';
 
 sealed class DeleteMealCubitState {}
 

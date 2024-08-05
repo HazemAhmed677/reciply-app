@@ -10,7 +10,7 @@ class DeleteMealCubit extends Cubit<DeleteMealCubitState> {
   Future<void> deleteMeal({required MealModel mealModel}) async {
     try {
       var mealBox = Hive.box<MealModel>(kMealBox);
-      await mealBox.delete(mealModel);
+      await mealBox.delete(mealModel.idMeal);
       emit(DeleteMealSuccess());
     } catch (e) {
       emit(

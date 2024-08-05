@@ -4,9 +4,9 @@ import 'package:reciply/core/utils/service_locator.dart';
 import 'package:reciply/features/home/data/repos/home_repo_implement.dart';
 import 'package:reciply/features/home/presentation/views/widgets/cusotm_bottom_navigation_bar.dart';
 import 'package:reciply/features/home/presentation/views/widgets/home_view_body.dart';
-import 'package:reciply/features/saved/presentation/manager/add_meal_cubit/add_meal_cubit_cubit.dart';
-import 'package:reciply/features/saved/presentation/manager/delete_meal_cubit/delete_meal_cubit_cubit.dart';
-import 'package:reciply/features/saved/presentation/manager/fetch_all_meals_cubit/fetch_all_meals_cubit_cubit.dart';
+import 'package:reciply/features/saved/presentation/manager/add_meal_cubit/add_meal_cubit.dart';
+import 'package:reciply/features/saved/presentation/manager/delete_meal_cubit/delete_meal_cubit.dart';
+import 'package:reciply/features/saved/presentation/manager/fetch_all_meals_cubit/fetch_all_meals_cubit.dart';
 import 'package:reciply/features/saved/presentation/views/saved_view.dart';
 import 'package:reciply/features/search/presnetation/manager/fetch_searched_meals_cubit/fetch_searched_meals_cubit.dart';
 import 'package:reciply/features/search/presnetation/views/search_view.dart';
@@ -47,12 +47,14 @@ class _HomeViewState extends State<HomeView> {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => AddMealCubitCubit(),
+          create: (context) => AddMealCubit(),
         ),
         BlocProvider(
-          create: (context) => FetchAllMealsCubitCubit(),
+          create: (context) => FetchAllMealsCubit(),
         ),
-        BlocProvider(create: (context) => DeleteMealCubit())
+        BlocProvider(
+          create: (context) => DeleteMealCubit(),
+        ),
       ],
       child: Scaffold(
         extendBody: true,

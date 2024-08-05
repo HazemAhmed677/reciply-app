@@ -3,48 +3,49 @@ part 'meal_model.g.dart';
 
 @HiveType(typeId: 0)
 class MealModel {
-  String? idMeal;
   @HiveField(0)
+  String? idMeal;
+  @HiveField(1)
   String? strMeal;
   dynamic strDrinkAlternate;
   String? strCategory;
   String? strArea;
-  @HiveField(1)
-  String? strInstructions;
   @HiveField(2)
+  String? strInstructions;
+  @HiveField(3)
   String? strMealThumb;
   String? strTags;
-  @HiveField(3)
-  String? strYoutube;
   @HiveField(4)
-  String? strIngredient1;
+  String? strYoutube;
   @HiveField(5)
-  String? strIngredient2;
+  String? strIngredient1;
   @HiveField(6)
-  String? strIngredient3;
+  String? strIngredient2;
   @HiveField(7)
-  String? strIngredient4;
+  String? strIngredient3;
   @HiveField(8)
-  String? strIngredient5;
+  String? strIngredient4;
   @HiveField(9)
-  String? strIngredient6;
+  String? strIngredient5;
   @HiveField(10)
-  String? strIngredient7;
+  String? strIngredient6;
   @HiveField(11)
-  String? strIngredient8;
+  String? strIngredient7;
   @HiveField(12)
-  String? strIngredient9;
+  String? strIngredient8;
   @HiveField(13)
-  String? strIngredient10;
+  String? strIngredient9;
   @HiveField(14)
-  String? strIngredient11;
+  String? strIngredient10;
   @HiveField(15)
-  String? strIngredient12;
+  String? strIngredient11;
   @HiveField(16)
-  String? strIngredient13;
+  String? strIngredient12;
   @HiveField(17)
-  String? strIngredient14;
+  String? strIngredient13;
   @HiveField(18)
+  String? strIngredient14;
+  @HiveField(19)
   String? strIngredient15;
   dynamic strIngredient16;
   dynamic strIngredient17;
