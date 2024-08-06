@@ -17,6 +17,12 @@ class CustomTextField extends StatefulWidget {
 
 class _CustomTextFieldState extends State<CustomTextField> {
   TextEditingController textEditingController = TextEditingController();
+  @override
+  void dispose() {
+    super.dispose();
+    textEditingController.dispose();
+  }
+
   String input = '';
   @override
   Widget build(BuildContext context) {

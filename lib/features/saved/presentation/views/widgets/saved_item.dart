@@ -41,7 +41,7 @@ class _SavedItemState extends State<SavedItem> {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16),
                 image: DecorationImage(
-                    fit: BoxFit.fill,
+                    fit: BoxFit.cover,
                     image: (widget.flag)
                         ? (widget.mealModel.strMealThumb != null)
                             ? CachedNetworkImageProvider(

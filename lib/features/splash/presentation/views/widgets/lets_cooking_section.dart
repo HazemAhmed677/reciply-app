@@ -23,6 +23,13 @@ class _LetsCookingSectionState extends State<LetsCookingSection>
   }
 
   @override
+  void dispose() {
+    super.dispose();
+    animationController1.dispose();
+    animationController2.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Column(
       children: [

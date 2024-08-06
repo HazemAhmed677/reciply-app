@@ -24,6 +24,12 @@ class _ImageWithAnimationState extends State<ImageWithAnimation>
   }
 
   @override
+  void dispose() {
+    super.dispose();
+    animationController.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: fadeAnimation,

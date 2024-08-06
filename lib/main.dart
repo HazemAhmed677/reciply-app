@@ -9,6 +9,7 @@ import 'package:reciply/core/utils/simple_bloc_observer.dart';
 import 'package:reciply/core/models/recipe_model/meal_model.dart';
 import 'package:reciply/core/managers/add_meal_cubit/add_meal_cubit.dart';
 import 'package:reciply/core/managers/delete_meal_cubit/delete_meal_cubit.dart';
+import 'package:reciply/features/saved/presentation/manager/fetch_all_meals_cubit/fetch_all_meals_cubit.dart';
 
 void main() async {
   setup(); // for dependency injection
@@ -35,6 +36,9 @@ class ReciplyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => DeleteMealCubit(),
+        ),
+        BlocProvider(
+          create: (context) => FetchAllMealsCubit(),
         ),
       ],
       child: MaterialApp.router(

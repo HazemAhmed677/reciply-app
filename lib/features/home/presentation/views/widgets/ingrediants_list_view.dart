@@ -31,6 +31,12 @@ class _IngrediantsListViewState extends State<IngrediantsListView>
   }
 
   @override
+  void dispose() {
+    super.dispose();
+    animationController.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: fadeAnimation,

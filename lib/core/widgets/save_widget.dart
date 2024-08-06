@@ -3,10 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:reciply/constants.dart';
+import 'package:reciply/core/helpers/custom_snack_bar.dart';
 import 'package:reciply/core/models/recipe_model/meal_model.dart';
 import 'package:reciply/core/utils/app_colors.dart';
 import 'package:reciply/core/managers/add_meal_cubit/add_meal_cubit.dart';
 import 'package:reciply/core/managers/delete_meal_cubit/delete_meal_cubit.dart';
+import 'package:reciply/features/saved/presentation/manager/fetch_all_meals_cubit/fetch_all_meals_cubit.dart';
 
 class SaveWidget extends StatefulWidget {
   const SaveWidget({
@@ -32,13 +34,32 @@ class _SaveWidgetState extends State<SaveWidget> {
     return InkWell(
       onTap: () async {
         if (meal == null) {
-          await BlocProvider.of<AddMealCubit>(context)
-              .addMeal(mealModel: widget.mealModel, mealBox: box);
+          await BlocProvider.of<AddMealCubit>(context).addMeal(
+            mealModel: widget.mealModel,
+            mealBox: box,
+          );
+          if (mounted) {
+            setState(() {
+              getShowSnackBar(
+                context,
+                'Saved successfully',
+              );
+              BlocProvider.of<FetchAllMealsCubit>(context).fetchAllMael();
+            });
+          }
         } else {
           await BlocProvider.of<DeleteMealCubit>(context)
               .deleteMeal(mealModel: widget.mealModel, mealBox: box);
+          if (mounted) {
+            setState(() {
+              getShowSnackBar(
+                context,
+                'Unsaved ',
+              );
+              BlocProvider.of<FetchAllMealsCubit>(context).fetchAllMael();
+            });
+          }
         }
-        setState(() {});
       },
       child: CircleAvatar(
         radius: widget.radius,

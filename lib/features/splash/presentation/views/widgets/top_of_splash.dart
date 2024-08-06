@@ -26,6 +26,12 @@ class _TopOfSplashState extends State<TopOfSplash>
   }
 
   @override
+  void dispose() {
+    super.dispose();
+    animationController.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: fadeAnimation,

@@ -62,8 +62,10 @@ class _TreandingCardState extends State<TreandingCard> {
                           16,
                         ),
                         onTap: () {
-                          GoRouter.of(context).push(AppRouters.recipeInfoID,
-                              extra: widget.mealModel);
+                          GoRouter.of(context)
+                              .push(AppRouters.recipeInfoID,
+                                  extra: widget.mealModel)
+                              .then((_) => setState(() {}));
                         },
                         child: Container(
                           clipBehavior: Clip.hardEdge,

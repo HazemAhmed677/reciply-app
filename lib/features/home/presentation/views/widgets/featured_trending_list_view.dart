@@ -1,11 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:reciply/core/models/recipe_model/recipe_model.dart';
 
 import 'package:reciply/features/home/presentation/views/widgets/treanding_card.dart';
+import 'package:reciply/features/saved/presentation/manager/fetch_all_meals_cubit/fetch_all_meals_cubit.dart';
 
-class FeaturedTrendingListView extends StatelessWidget {
+class FeaturedTrendingListView extends StatefulWidget {
   const FeaturedTrendingListView({super.key, required this.recipesModel});
   final RecipesModel recipesModel;
+
+  @override
+  State<FeaturedTrendingListView> createState() =>
+      _FeaturedTrendingListViewState();
+}
+
+class _FeaturedTrendingListViewState extends State<FeaturedTrendingListView> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -23,14 +37,15 @@ class FeaturedTrendingListView extends StatelessWidget {
               parent: AlwaysScrollableScrollPhysics()),
           padding: EdgeInsets.zero,
           scrollDirection: Axis.horizontal,
-          itemCount: recipesModel.meals?.length ?? 0,
+          itemCount: widget.recipesModel.meals?.length ?? 0,
           itemBuilder: (BuildContext context, int index) => Padding(
             padding: EdgeInsets.only(
-              right: (index != recipesModel.meals!.length - 1) ? 14.0 : 0,
+              right:
+                  (index != widget.recipesModel.meals!.length - 1) ? 14.0 : 0,
             ),
             ////// here
             child: TreandingCard(
-              mealModel: recipesModel.meals![index],
+              mealModel: widget.recipesModel.meals![index],
             ),
           ),
         ),
