@@ -10,7 +10,7 @@ import 'package:reciply/features/home/presentation/manager/fetch_pupolar_categor
 import 'package:reciply/features/home/presentation/manager/fetch_trending_cubit.dart/fetch_trending_cubit.dart';
 import 'package:reciply/features/home/presentation/manager/ingrediants_and_procedure_cubit/ingrediants_and_procedure_cubit.dart';
 import 'package:reciply/features/home/presentation/views/home_view.dart';
-import 'package:reciply/features/home/presentation/views/recipe_info_view.dart';
+import 'package:reciply/core/widgets/recipe_info_view.dart';
 import 'package:reciply/features/splash/presentation/views/splash_view.dart';
 
 abstract class AppRouters {

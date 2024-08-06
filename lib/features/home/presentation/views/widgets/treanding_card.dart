@@ -1,11 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:reciply/constants.dart';
 import 'package:reciply/core/utils/app_routers.dart';
 import 'package:reciply/core/utils/app_styles.dart';
 import 'package:reciply/core/models/recipe_model/meal_model.dart';
+import 'package:reciply/core/widgets/play_video.dart';
 import 'package:reciply/core/widgets/save_widget.dart';
 
 class TreandingCard extends StatefulWidget {
@@ -94,20 +94,7 @@ class _TreandingCardState extends State<TreandingCard> {
                     blurRadius: 12,
                   ),
                 ),
-                InkWell(
-                  onTap: () {},
-                  child: Center(
-                    child: CircleAvatar(
-                      radius: 22,
-                      backgroundColor: const Color(
-                        0xff303030,
-                      ).withOpacity(0.3),
-                      child: SvgPicture.asset(
-                        'assets/images/Play.svg',
-                      ),
-                    ),
-                  ),
-                ),
+                PlayVideo(mealModel: widget.mealModel),
               ],
             ),
           ),
