@@ -124,7 +124,9 @@ class _TreandingCardState extends State<TreandingCard> {
               widget.mealModel.strMeal!,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
-              style: AppStyles.regular14(context),
+              style: AppStyles.regular14(context).copyWith(
+                fontSize: 15,
+              ),
             ),
           ),
         ),
