@@ -17,9 +17,9 @@ class _ShimmerLoadingForPopularCategoriesState
     extends State<ShimmerLoadingForPopularCategories> {
   final shimmerGradient = const LinearGradient(
     colors: [
-      Color.fromARGB(255, 191, 130, 130),
-      Color.fromARGB(255, 231, 204, 183),
-      Color.fromARGB(255, 232, 232, 250),
+      Color.fromARGB(255, 206, 206, 222),
+      Color.fromARGB(255, 221, 219, 241),
+      Color.fromARGB(255, 224, 224, 239),
     ],
   );
   @override

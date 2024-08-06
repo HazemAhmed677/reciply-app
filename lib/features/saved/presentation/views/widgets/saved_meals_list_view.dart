@@ -18,9 +18,7 @@ class _SaveMealsListViewState extends State<SaveMealsListView> {
   Widget build(BuildContext context) {
     return BlocBuilder<FetchAllMealsCubit, FetchAllMealsCubitState>(
       builder: (context, state) {
-        if (state is FetchAllMealsLoading) {
-          return const Center(child: CircularProgressIndicator());
-        } else if (state is FetchAllMealsSuccess) {
+        if (state is FetchAllMealsSuccess) {
           var meals = state.mealsList;
           return (meals.isEmpty)
               ? Center(

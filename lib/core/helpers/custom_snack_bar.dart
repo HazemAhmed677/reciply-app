@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:reciply/core/utils/app_colors.dart';
 import 'package:reciply/core/utils/app_styles.dart';
 
 getShowSnackBar(BuildContext context, String content) {
@@ -8,23 +7,27 @@ getShowSnackBar(BuildContext context, String content) {
       SnackBar(
         dismissDirection: DismissDirection.down,
         showCloseIcon: true,
-        closeIconColor: AppColors.f1Color,
+        closeIconColor: Colors.white,
         clipBehavior: Clip.none,
-        elevation: 10,
+        elevation: 8,
         padding: const EdgeInsets.only(
-          top: 12,
-          bottom: 12,
+          top: 10,
+          bottom: 10,
           left: 16,
           right: 10,
         ),
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(14),
-            topRight: Radius.circular(14),
+            topLeft: Radius.circular(
+              14,
+            ),
+            topRight: Radius.circular(
+              14,
+            ),
           ),
         ),
-        duration: const Duration(milliseconds: 500),
-        backgroundColor: Colors.black,
+        duration: const Duration(milliseconds: 600),
+        backgroundColor: Colors.grey.shade600,
         content: Text(
           content,
           style: AppStyles.regular16(context).copyWith(
