@@ -33,7 +33,7 @@ class AllSavedWidget extends StatelessWidget {
           ),
         ),
         SliverPadding(
-          padding: const EdgeInsets.symmetric(vertical: 12),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
           sliver: SliverList.builder(
             itemCount: meals.length,
             itemBuilder: (context, index) => Padding(

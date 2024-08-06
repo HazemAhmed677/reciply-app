@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:reciply/core/utils/app_colors.dart';
@@ -21,11 +22,10 @@ class TrendingNowWord extends StatelessWidget {
             'Trending now ',
             style: AppStyles.semiBold20(context),
           ),
-          Text(
-            '🔥',
-            style: AppStyles.semiBold20(context).copyWith(
-              color: Colors.orange,
-            ),
+          const Icon(
+            FontAwesomeIcons.fireFlameSimple,
+            color: Colors.orange,
+            size: 20,
           ),
           const Spacer(),
           Row(
@@ -42,7 +42,7 @@ class TrendingNowWord extends StatelessWidget {
                 color: AppColors.e2Color,
               ),
             ],
-          )
+          ),
         ],
       ),
     );

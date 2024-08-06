@@ -18,30 +18,37 @@ class PlayVideo extends StatefulWidget {
 class _PlayVideoState extends State<PlayVideo> {
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () async {
-        if (widget.mealModel.strYoutube != null) {
-          Uri uri = Uri.parse(widget.mealModel.strYoutube!);
+    return Center(
+      child: CircleAvatar(
+        radius: 22,
+        backgroundColor: Colors.transparent,
+        child: InkWell(
+          splashColor: Colors.transparent,
+          onTap: () async {
+            if (widget.mealModel.strYoutube != null) {
+              Uri uri = Uri.parse(widget.mealModel.strYoutube!);
 
-          if (await canLaunchUrl(uri)) {
-            await launchUrl(uri);
-          }
-        } else {
-          if (mounted) {
-            setState(() {
-              getShowSnackBar(context, 'Video is not available');
-            });
-          }
-        }
-      },
-      child: Center(
-        child: CircleAvatar(
-          radius: 22,
-          backgroundColor: const Color(
-            0xff303030,
-          ).withOpacity(0.3),
-          child: SvgPicture.asset(
-            'assets/images/Play.svg',
+              if (await canLaunchUrl(uri)) {
+                await launchUrl(uri);
+              }
+            } else {
+              if (mounted) {
+                setState(() {
+                  getShowSnackBar(context, 'Video is not available');
+                });
+              }
+            }
+          },
+          child: Center(
+            child: CircleAvatar(
+              radius: 22,
+              backgroundColor: const Color(
+                0xff303030,
+              ).withOpacity(0.3),
+              child: SvgPicture.asset(
+                'assets/images/Play.svg',
+              ),
+            ),
           ),
         ),
       ),

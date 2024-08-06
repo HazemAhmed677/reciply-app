@@ -6,6 +6,7 @@ import 'package:reciply/constants.dart';
 import 'package:reciply/core/utils/app_colors.dart';
 import 'package:reciply/core/utils/app_styles.dart';
 import 'package:reciply/core/models/recipe_model/meal_model.dart';
+import 'package:reciply/core/widgets/play_video.dart';
 import 'package:reciply/core/widgets/save_widget.dart';
 
 class SavedItem extends StatefulWidget {
@@ -66,6 +67,9 @@ class _SavedItemState extends State<SavedItem> {
                 ],
               ),
             ),
+          ),
+          PlayVideo(
+            mealModel: widget.mealModel,
           ),
           Padding(
             padding: const EdgeInsets.only(

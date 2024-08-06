@@ -76,7 +76,7 @@ class _ButtonSectionState extends State<ButtonSection>
                 children: [
                   Text(
                     'Start cooking ',
-                    style: AppStyles.semiBold16(context).copyWith(
+                    style: AppStyles.semiBold20(context).copyWith(
                       color: AppColors.white,
                     ),
                   ),
