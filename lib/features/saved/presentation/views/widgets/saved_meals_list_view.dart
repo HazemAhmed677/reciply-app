@@ -35,15 +35,18 @@ class _SaveMealsListViewState extends State<SaveMealsListView> {
                 ))
               : SliverList.builder(
                   itemCount: meals.length,
-                  itemBuilder: (context, index) => InkWell(
-                    splashColor: Colors.transparent,
-                    onTap: () async {
-                      await GoRouter.of(context)
-                          .push(AppRouters.recipeInfoID, extra: meals[index]);
-                    },
-                    child: SavedItem(
-                      aspectRatio: 315 / 178,
-                      mealModel: meals[index],
+                  itemBuilder: (context, index) => Padding(
+                    padding: const EdgeInsets.only(bottom: 16.0),
+                    child: InkWell(
+                      splashColor: Colors.transparent,
+                      onTap: () async {
+                        await GoRouter.of(context)
+                            .push(AppRouters.recipeInfoID, extra: meals[index]);
+                      },
+                      child: SavedItem(
+                        aspectRatio: 315 / 178,
+                        mealModel: meals[index],
+                      ),
                     ),
                   ),
                 );

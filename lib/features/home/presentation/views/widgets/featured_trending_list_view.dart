@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:reciply/core/models/recipe_model/recipe_model.dart';
-
 import 'package:reciply/features/home/presentation/views/widgets/treanding_card.dart';
-import 'package:reciply/features/saved/presentation/manager/fetch_all_meals_cubit/fetch_all_meals_cubit.dart';
 
 class FeaturedTrendingListView extends StatefulWidget {
   const FeaturedTrendingListView({super.key, required this.recipesModel});

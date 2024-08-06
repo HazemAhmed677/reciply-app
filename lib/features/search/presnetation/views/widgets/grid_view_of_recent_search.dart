@@ -6,8 +6,8 @@ import 'package:reciply/core/utils/app_styles.dart';
 import 'package:reciply/features/search/presnetation/manager/fetch_recent_search_cubit/fetch_recent_serch_meals_cubit.dart';
 import 'package:reciply/features/search/presnetation/views/widgets/searhced_item.dart';
 
-class GridViewOfSearch extends StatelessWidget {
-  const GridViewOfSearch({super.key});
+class GridViewOfRecentSearch extends StatelessWidget {
+  const GridViewOfRecentSearch({super.key});
 
   @override
   Widget build(BuildContext context) {

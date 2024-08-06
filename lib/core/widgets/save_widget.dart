@@ -62,7 +62,7 @@ class _SaveWidgetState extends State<SaveWidget> {
         }
       },
       child: CircleAvatar(
-        radius: widget.radius,
+        radius: widget.radius ?? 18,
         backgroundColor: AppColors.white,
         child: Icon(
           (meal == null)
@@ -74,7 +74,7 @@ class _SaveWidgetState extends State<SaveWidget> {
               blurRadius: widget.blurRadius ?? 0,
             ),
           ],
-          size: (widget.size != null) ? widget.size : 20,
+          size: (widget.size != null) ? widget.size : 18,
         ),
       ),
     );

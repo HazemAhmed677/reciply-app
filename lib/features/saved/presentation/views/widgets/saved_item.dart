@@ -31,8 +31,8 @@ class _SavedItemState extends State<SavedItem> {
     return AspectRatio(
       aspectRatio: widget.aspectRatio,
       child: Padding(
-        padding: EdgeInsets.only(
-          bottom: (!widget.flag) ? 16.0 : 0,
+        padding: const EdgeInsets.only(
+          bottom: 0,
         ),
         child: Stack(
           alignment: Alignment.bottomCenter,
@@ -105,7 +105,8 @@ class _SavedItemState extends State<SavedItem> {
                   SaveWidget(
                     mealModel: widget.mealModel,
                     radius: 14,
-                    size: 16,
+                    size: 15,
+                    blurRadius: 1,
                   ),
                 ],
               ),
