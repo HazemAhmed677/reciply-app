@@ -5,8 +5,8 @@ import 'package:reciply/features/home/presentation/views/widgets/custom_text_fie
 import 'package:reciply/features/search/presnetation/manager/fetch_searched_meals_cubit/fetch_searched_meals_cubit.dart';
 
 class TopSection extends StatefulWidget {
-  const TopSection({super.key});
-
+  const TopSection({super.key, required this.text});
+  final String text;
   @override
   State<TopSection> createState() => _TopSectionState();
 }
@@ -49,7 +49,7 @@ class _TopSectionState extends State<TopSection> {
                     vertical: 20,
                   ),
                   child: Text(
-                    'Recent Search',
+                    widget.text,
                     style: AppStyles.semiBold16(context),
                   ),
                 )

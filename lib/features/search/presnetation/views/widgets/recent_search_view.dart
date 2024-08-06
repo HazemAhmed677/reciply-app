@@ -9,22 +9,19 @@ class RecentSearchView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(
-        horizontal: 20.0,
-      ),
-      child: CustomScrollView(
-        physics: BouncingScrollPhysics(),
-        slivers: [
-          TopSection(),
-          GridViewOfRecentSearch(),
-          SliverToBoxAdapter(
-            child: SizedBox(
-              height: 72,
-            ),
-          )
-        ],
-      ),
+    return const CustomScrollView(
+      physics: BouncingScrollPhysics(),
+      slivers: [
+        TopSection(
+          text: 'Recent search',
+        ),
+        GridViewOfRecentSearch(),
+        SliverToBoxAdapter(
+          child: SizedBox(
+            height: 72,
+          ),
+        )
+      ],
     );
   }
 }
