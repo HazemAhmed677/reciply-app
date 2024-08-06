@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:reciply/core/utils/app_styles.dart';
 import 'package:reciply/features/home/presentation/manager/fetch_categorized_meals_cubit/fetch_categorized_meals_cubit.dart';
 import 'package:reciply/features/home/presentation/manager/fetch_pupolar_categories.dart/fetch_pupolar_categories_cubit.dart';
+import 'package:reciply/features/home/presentation/views/widgets/popular_category%20shimmer.dart';
 import 'package:reciply/features/home/presentation/views/widgets/pupular_category_card.dart';
 
 class PopularCategoryListView extends StatefulWidget {
@@ -22,11 +23,18 @@ class _PopularCategoryListViewState extends State<PopularCategoryListView> {
         FetchPupolarCategoriesState>(
       builder: (context, state) {
         if (state is FetchPupolarCategoriesLoading) {
-          return const Center(child: CircularProgressIndicator());
+          return const Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 20.0,
+            ),
+            child: ShimmerLoadingForPopularCategories(),
+          );
         } else if (state is FetchPupolarCategoriesSuccess) {
           var listOfCategories = state.categoriesModel.meals;
           return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 20.0,
+            ),
             child: SingleChildScrollView(
               clipBehavior: Clip.none,
               scrollDirection: Axis.horizontal,

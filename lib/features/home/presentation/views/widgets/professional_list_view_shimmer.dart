@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:reciply/core/widgets/shimmer_loading_list_view.dart';
+import 'package:reciply/features/home/presentation/views/widgets/shimmer_loading_list_view.dart';
 // ignore: depend_on_referenced_packages
 import 'package:shimmer/shimmer.dart';
 
@@ -81,13 +81,6 @@ class ProfessinalListViewShimmer extends StatelessWidget {
             ),
           ),
         ),
-        // const SizedBox(
-        //   height: 8,
-        // ),
-
-        // const SizedBox(
-        //   height: 20,
-        // ),
       ],
     );
   }

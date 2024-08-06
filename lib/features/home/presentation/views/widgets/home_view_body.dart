@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:reciply/core/utils/app_styles.dart';
-import 'package:reciply/core/widgets/shimmer_loading_list_view.dart';
+import 'package:reciply/features/home/presentation/views/widgets/shimmer_loading_list_view.dart';
 import 'package:reciply/features/home/presentation/manager/fetch_trending_cubit.dart/fetch_trending_cubit.dart';
 import 'package:reciply/features/home/presentation/views/widgets/featured_popular_category.dart';
 import 'package:reciply/features/home/presentation/views/widgets/featured_trending_now.dart';
