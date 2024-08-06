@@ -22,7 +22,9 @@ class RecipeInfoBody extends StatelessWidget {
                   child: TitleOfInfoView(
                 mealModel: mealModel,
               )),
-              const SliverToBoxAdapter(child: ItemInfoMiddleSection()),
+              const SliverToBoxAdapter(
+                child: ItemInfoMiddleSection(),
+              ),
               IntegrateIngredAndProcedCubit(
                 mealModel: mealModel,
               ),

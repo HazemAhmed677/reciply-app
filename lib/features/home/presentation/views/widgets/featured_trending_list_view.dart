@@ -28,6 +28,7 @@ class FeaturedTrendingListView extends StatelessWidget {
             padding: EdgeInsets.only(
               right: (index != recipesModel.meals!.length - 1) ? 14.0 : 0,
             ),
+            ////// here
             child: TreandingCard(
               mealModel: recipesModel.meals![index],
             ),

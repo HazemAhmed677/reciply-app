@@ -4,8 +4,6 @@ import 'package:reciply/core/utils/service_locator.dart';
 import 'package:reciply/features/home/data/repos/home_repo_implement.dart';
 import 'package:reciply/features/home/presentation/views/widgets/cusotm_bottom_navigation_bar.dart';
 import 'package:reciply/features/home/presentation/views/widgets/home_view_body.dart';
-import 'package:reciply/features/saved/presentation/manager/add_meal_cubit/add_meal_cubit.dart';
-import 'package:reciply/features/saved/presentation/manager/delete_meal_cubit/delete_meal_cubit.dart';
 import 'package:reciply/features/saved/presentation/manager/fetch_all_meals_cubit/fetch_all_meals_cubit.dart';
 import 'package:reciply/features/saved/presentation/views/saved_view.dart';
 import 'package:reciply/features/search/presnetation/manager/fetch_searched_meals_cubit/fetch_searched_meals_cubit.dart';
@@ -20,7 +18,7 @@ class HomeView extends StatefulWidget {
   State<HomeView> createState() => _HomeViewState();
 }
 
-int currentIndex = 1;
+int currentIndex = 0;
 
 class _HomeViewState extends State<HomeView> {
   List<Widget> screens = [
@@ -39,38 +37,28 @@ class _HomeViewState extends State<HomeView> {
       ],
       child: const SearchView(),
     ),
-    const SavedView(),
+    BlocProvider(
+      create: (context) => FetchAllMealsCubit()..fetchAllMael(),
+      child: const SavedView(),
+    ),
   ];
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(
-          create: (context) => AddMealCubit(),
+    return Scaffold(
+      extendBody: true,
+      body: AnimatedSwitcher(
+        duration: const Duration(
+          milliseconds: 600,
         ),
-        BlocProvider(
-          create: (context) => FetchAllMealsCubit(),
-        ),
-        BlocProvider(
-          create: (context) => DeleteMealCubit(),
-        ),
-      ],
-      child: Scaffold(
-        extendBody: true,
-        body: AnimatedSwitcher(
-          duration: const Duration(
-            milliseconds: 600,
-          ),
-          child: screens[currentIndex],
-        ),
-        bottomNavigationBar: CusotmBottomNavigationBar(
-          currentIndex: currentIndex,
-          onTap: (index) {
-            currentIndex = index;
-            setState(() {});
-          },
-        ),
+        child: screens[currentIndex],
+      ),
+      bottomNavigationBar: CusotmBottomNavigationBar(
+        currentIndex: currentIndex,
+        onTap: (index) {
+          currentIndex = index;
+          setState(() {});
+        },
       ),
     );
   }

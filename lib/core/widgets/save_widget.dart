@@ -5,37 +5,38 @@ import 'package:hive_flutter/adapters.dart';
 import 'package:reciply/constants.dart';
 import 'package:reciply/core/models/recipe_model/meal_model.dart';
 import 'package:reciply/core/utils/app_colors.dart';
-import 'package:reciply/features/saved/presentation/manager/add_meal_cubit/add_meal_cubit.dart';
-import 'package:reciply/features/saved/presentation/manager/delete_meal_cubit/delete_meal_cubit.dart';
+import 'package:reciply/core/managers/add_meal_cubit/add_meal_cubit.dart';
+import 'package:reciply/core/managers/delete_meal_cubit/delete_meal_cubit.dart';
 
 class SaveWidget extends StatefulWidget {
-  const SaveWidget(
-      {super.key,
-      required this.mealModel,
-      required this.borderRadius,
-      this.radius});
+  const SaveWidget({
+    super.key,
+    required this.mealModel,
+    this.blurRadius,
+    this.radius,
+    this.size,
+  });
   final MealModel mealModel;
-  final double borderRadius;
+  final double? blurRadius;
   final double? radius;
+  final double? size;
   @override
   State<SaveWidget> createState() => _SaveWidgetState();
 }
 
 class _SaveWidgetState extends State<SaveWidget> {
-  var box = Hive.box<MealModel>(kMealBox);
   @override
   Widget build(BuildContext context) {
+    Box<MealModel> box = Hive.box<MealModel>(kMealBox);
+    MealModel? meal = box.get(widget.mealModel.idMeal);
     return InkWell(
       onTap: () async {
-        box.get(widget.mealModel.idMeal);
-        if (box.get(widget.mealModel.idMeal) == null) {
-          await BlocProvider.of<AddMealCubit>(context).addMeal(
-            mealModel: widget.mealModel,
-          );
+        if (meal == null) {
+          await BlocProvider.of<AddMealCubit>(context)
+              .addMeal(mealModel: widget.mealModel, mealBox: box);
         } else {
-          await BlocProvider.of<DeleteMealCubit>(context).deleteMeal(
-            mealModel: widget.mealModel,
-          );
+          await BlocProvider.of<DeleteMealCubit>(context)
+              .deleteMeal(mealModel: widget.mealModel, mealBox: box);
         }
         setState(() {});
       },
@@ -43,16 +44,16 @@ class _SaveWidgetState extends State<SaveWidget> {
         radius: widget.radius,
         backgroundColor: AppColors.white,
         child: Icon(
-          (box.get(widget.mealModel.idMeal) == null)
+          (meal == null)
               ? FontAwesomeIcons.bookmark
               : FontAwesomeIcons.solidBookmark,
           color: Colors.black,
           shadows: [
             Shadow(
-              blurRadius: widget.borderRadius,
+              blurRadius: widget.blurRadius ?? 0,
             ),
           ],
-          size: 20,
+          size: (widget.size != null) ? widget.size : 20,
         ),
       ),
     );

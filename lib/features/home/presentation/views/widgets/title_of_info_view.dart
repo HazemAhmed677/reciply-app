@@ -4,9 +4,15 @@ import 'package:reciply/core/utils/app_styles.dart';
 import 'package:reciply/core/models/recipe_model/meal_model.dart';
 import 'package:reciply/features/saved/presentation/views/widgets/saved_item.dart';
 
-class TitleOfInfoView extends StatelessWidget {
+class TitleOfInfoView extends StatefulWidget {
   const TitleOfInfoView({super.key, required this.mealModel});
   final MealModel mealModel;
+
+  @override
+  State<TitleOfInfoView> createState() => _TitleOfInfoViewState();
+}
+
+class _TitleOfInfoViewState extends State<TitleOfInfoView> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -35,18 +41,15 @@ class TitleOfInfoView extends StatelessWidget {
             maxWidth: 0.7 * MediaQuery.sizeOf(context).width,
           ),
           child: Text(
-            mealModel.strMeal!,
+            widget.mealModel.strMeal!,
             style: AppStyles.semiBold24(context),
           ),
         ),
         const SizedBox(
           height: 12,
         ),
-        const SizedBox(
-          height: 12,
-        ),
         SavedItem(
-          mealModel: mealModel,
+          mealModel: widget.mealModel,
           flag: true,
           aspectRatio: 335 / 218,
         ),

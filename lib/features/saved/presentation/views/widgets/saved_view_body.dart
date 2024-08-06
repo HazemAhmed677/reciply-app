@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:reciply/core/utils/app_styles.dart';
-import 'package:reciply/features/saved/presentation/views/widgets/saved_item.dart';
+import 'package:reciply/features/saved/presentation/views/widgets/saved_meals_list_view.dart';
 
 class SavedViewBody extends StatelessWidget {
   const SavedViewBody({super.key});
@@ -27,18 +27,14 @@ class SavedViewBody extends StatelessWidget {
         ),
         const SliverToBoxAdapter(
           child: SizedBox(
-            height: 20,
+            height: 14,
           ),
         ),
-        SliverPadding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          sliver: SliverList(
-            delegate: SliverChildBuilderDelegate(
-                (context, index) => const SavedItem(
-                      aspectRatio: 315 / 178,
-                    ),
-                childCount: 8),
+        const SliverPadding(
+          padding: EdgeInsets.symmetric(
+            horizontal: 20,
           ),
+          sliver: SaveMealsListView(),
         ),
         const SliverToBoxAdapter(
           child: SizedBox(
