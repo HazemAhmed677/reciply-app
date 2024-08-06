@@ -89,7 +89,7 @@ class _TreandingCardState extends State<TreandingCard> {
                   right: 12,
                   child: SaveWidget(
                     mealModel: widget.mealModel,
-                    borderRadius: 12,
+                    blurRadius: 12,
                   ),
                 ),
                 InkWell(
