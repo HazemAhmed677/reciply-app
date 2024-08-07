@@ -17,7 +17,6 @@ class SearchViewBody extends StatelessWidget {
       ),
       child: BlocBuilder<FetchSearchedMealsCubit, FetchSearchedMealsState>(
           builder: (context, state) {
-        //// shimmer here
         if (state is FetchSearchedMealsLoading) {
           return const LoadingResultSearch();
         } else if (state is FetchSearchedMealsSuccess) {

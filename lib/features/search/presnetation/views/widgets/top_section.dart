@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:reciply/core/managers/switch_views_cubit/switch_views_cubit.dart';
 import 'package:reciply/core/utils/app_styles.dart';
 import 'package:reciply/features/home/presentation/views/widgets/custom_text_field.dart';
 import 'package:reciply/features/search/presnetation/manager/fetch_searched_meals_cubit/fetch_searched_meals_cubit.dart';
@@ -38,6 +39,8 @@ class _TopSectionState extends State<TopSection> {
               if (value != '') {
                 flag = false;
                 setState(() {});
+                BlocProvider.of<SwitchViewsCubit>(context)
+                    .emitViews(currentIndex: 1);
                 await BlocProvider.of<FetchSearchedMealsCubit>(context)
                     .fetchSearchedMeals(input: value);
               }

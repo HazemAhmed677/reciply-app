@@ -9,10 +9,8 @@ import 'package:reciply/core/utils/app_colors.dart';
 class CusotmBottomNavigationBar extends StatefulWidget {
   const CusotmBottomNavigationBar({
     super.key,
-    required this.currentIndex,
     this.onTap,
   });
-  final int currentIndex;
   final Function(int)? onTap;
   @override
   State<CusotmBottomNavigationBar> createState() =>
@@ -24,7 +22,6 @@ class _CusotmBottomNavigationBarState extends State<CusotmBottomNavigationBar> {
 
   @override
   Widget build(BuildContext context) {
-    int index = BlocProvider.of<SwitchViewsCubit>(context).index;
     return BlocBuilder<SwitchViewsCubit, SwitchViewsState>(
       builder: (context, state) {
         return CurvedNavigationBar(

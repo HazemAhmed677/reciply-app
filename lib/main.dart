@@ -39,7 +39,8 @@ class ReciplyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => FetchSearchedMealsCubit(
-              homeRepoImplement: getIt.get<HomeRepoImplement>()),
+            homeRepoImplement: getIt.get<HomeRepoImplement>(),
+          ),
         ),
         BlocProvider(
           create: (context) => AddMealCubit(),

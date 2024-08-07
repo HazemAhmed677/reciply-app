@@ -26,19 +26,16 @@ class GridViewOfRecentSearch extends StatelessWidget {
                     crossAxisSpacing: 15,
                     mainAxisSpacing: 15,
                   ),
-                  itemBuilder: (context, index, animatable) => AnimatedBuilder(
-                    animation: animatable,
-                    builder: (context, _) => FadeTransition(
-                      opacity: animatable,
-                      child: InkWell(
-                        borderRadius: BorderRadius.circular(16),
-                        onTap: () {
-                          GoRouter.of(context).push(AppRouters.recipeInfoID,
-                              extra: meals[index]);
-                        },
-                        child: SearhcedItem(
-                          mealModel: meals[index],
-                        ),
+                  itemBuilder: (context, index, animatable) => FadeTransition(
+                    opacity: animatable,
+                    child: InkWell(
+                      borderRadius: BorderRadius.circular(16),
+                      onTap: () {
+                        GoRouter.of(context)
+                            .push(AppRouters.recipeInfoID, extra: meals[index]);
+                      },
+                      child: SearhcedItem(
+                        mealModel: meals[index],
                       ),
                     ),
                   ),
@@ -61,7 +58,7 @@ class GridViewOfRecentSearch extends StatelessWidget {
             ),
           );
         } else {
-          return const SliverToBoxAdapter(child: SizedBox());
+          return const SliverToBoxAdapter(child: Text(''));
         }
       },
     );
