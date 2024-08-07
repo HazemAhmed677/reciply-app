@@ -75,9 +75,12 @@ class _PupolarDishesListViewState extends State<PupolarDishesListView> {
               ),
             );
           } else if (state is FetchCategorizedMealsFailure) {
-            return Text(
-              state.errorMsg,
-              style: AppStyles.regular16(context),
+            return Padding(
+              padding: const EdgeInsets.only(top: 20.0),
+              child: Text(
+                state.errorMsg,
+                style: AppStyles.regular16(context),
+              ),
             );
           } else {
             return const SizedBox();

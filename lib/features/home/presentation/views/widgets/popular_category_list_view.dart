@@ -64,9 +64,15 @@ class _PopularCategoryListViewState extends State<PopularCategoryListView> {
             ),
           );
         } else if (state is FetchPupolarCategoriesFailure) {
-          return Text(
-            state.errorMsg,
-            style: AppStyles.regular16(context),
+          return Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 20.0,
+              vertical: 30,
+            ),
+            child: Text(
+              state.errorMsg,
+              style: AppStyles.regular16(context),
+            ),
           );
         } else {
           return const SizedBox();

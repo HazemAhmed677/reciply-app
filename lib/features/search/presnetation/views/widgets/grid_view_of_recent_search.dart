@@ -5,6 +5,7 @@ import 'package:reciply/core/utils/app_routers.dart';
 import 'package:reciply/core/utils/app_styles.dart';
 import 'package:reciply/features/search/presnetation/manager/fetch_recent_search_cubit/fetch_recent_serch_meals_cubit.dart';
 import 'package:reciply/features/search/presnetation/views/widgets/searhced_item.dart';
+import 'package:reciply/features/search/presnetation/views/widgets/shimmer_grid_view.dart';
 
 class GridViewOfRecentSearch extends StatelessWidget {
   const GridViewOfRecentSearch({super.key});
@@ -14,8 +15,7 @@ class GridViewOfRecentSearch extends StatelessWidget {
     return BlocBuilder<FetchRecentSerchMealsCubit, FetchRecentSerchMealsState>(
       builder: (context, state) {
         if (state is FetchRecentSerchMealsLoading) {
-          return const SliverToBoxAdapter(
-              child: Center(child: CircularProgressIndicator()));
+          return const ShimmerGridView();
         } else if (state is FetchRecentSerchMealsSuccess) {
           var meals = state.recipesModel.meals;
           return (meals != null && meals.isNotEmpty)

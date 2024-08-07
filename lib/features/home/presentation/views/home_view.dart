@@ -20,6 +20,7 @@ class HomeView extends StatefulWidget {
 int currentIndex = 0;
 
 class _HomeViewState extends State<HomeView> {
+  bool flag = true;
   List<Widget> screens = [
     const HomeViewBody(),
     MultiBlocProvider(
