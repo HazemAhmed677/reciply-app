@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:reciply/core/utils/app_colors.dart';
 import 'package:reciply/core/utils/app_styles.dart';
 
 getShowSnackBar(BuildContext context, String content) {
@@ -33,7 +32,9 @@ getShowSnackBar(BuildContext context, String content) {
             ),
           ),
         ),
-        duration: const Duration(milliseconds: 600),
+        duration: const Duration(
+          milliseconds: 600,
+        ),
         backgroundColor: Colors.grey.shade300,
         content: Text(
           content,

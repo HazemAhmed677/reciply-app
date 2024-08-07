@@ -11,7 +11,7 @@ class LoadingResultSearch extends StatelessWidget {
   Widget build(BuildContext context) {
     return const CustomScrollView(
       slivers: [
-        TopSection(text: 'result search'),
+        TopSection(text: 'Search Result'),
         ShimmerGridView(),
         SliverToBoxAdapter(
           child: SizedBox(

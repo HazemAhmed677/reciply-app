@@ -13,7 +13,7 @@ class RecentSearchView extends StatelessWidget {
       physics: BouncingScrollPhysics(),
       slivers: [
         TopSection(
-          text: 'Recent search',
+          text: 'Recent Search',
         ),
         GridViewOfRecentSearch(),
         SliverToBoxAdapter(

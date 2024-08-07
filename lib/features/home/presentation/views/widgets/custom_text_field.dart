@@ -6,11 +6,9 @@ import 'package:reciply/core/utils/app_styles.dart';
 class CustomTextField extends StatefulWidget {
   const CustomTextField({
     super.key,
-    this.onTap,
-    this.onSubmettied,
+    required this.onSubmettied,
   });
-  final Function()? onTap;
-  final Function(String)? onSubmettied;
+  final Function(String) onSubmettied;
   @override
   State<CustomTextField> createState() => _CustomTextFieldState();
 }
@@ -29,7 +27,6 @@ class _CustomTextFieldState extends State<CustomTextField> {
     return Card(
       child: TextField(
         controller: textEditingController,
-        onTap: widget.onTap,
         clipBehavior: Clip.hardEdge,
         cursorColor: const Color.fromARGB(255, 213, 100, 100),
         style: AppStyles.regular14(context),

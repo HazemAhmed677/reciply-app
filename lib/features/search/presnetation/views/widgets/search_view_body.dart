@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:reciply/core/utils/app_styles.dart';
 import 'package:reciply/features/search/presnetation/manager/fetch_searched_meals_cubit/fetch_searched_meals_cubit.dart';
 import 'package:reciply/features/search/presnetation/views/widgets/loading_result_search.dart';
 import 'package:reciply/features/search/presnetation/views/widgets/meal_is_not_found.dart';
