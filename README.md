@@ -26,3 +26,4 @@
 </ul><ul>
 <li>User Interface: Utilizes a clean and intuitive design, Offers responsive layout for both Android and iOS devices</li>
 </ul><h2>Project Status</h2>
+<hr><p>Completed</p>
